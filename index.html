@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>XO-SERVICES</title>
+<meta name="description" content="XO-SERVICES s. r. o. – electrical installation and assembly crews for industrial projects abroad. Košice, Slovakia.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap">
+<style>
+/* Layout: a recruitment poster that keeps going — huge black caps on white paper, XO watermark bleeding off the right edge,
+   thin rules between sections, and the black contact band fixed to the bottom of every screen. Single light world by choice. */
+:root{
+  --paper:#ffffff; --ink:#111111; --grey:#666666; --line:#dedede; --band:#111111; --band-ink:#ffffff; --band-div:#787878;
+  --display:"Inter","Helvetica Neue",Arial,sans-serif; --body:"Inter","Helvetica Neue",Arial,sans-serif;
+  --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2.5rem; --s5:4rem; --s6:7rem;
+  --wrap:78rem; --band-h:3.25rem;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body);
+  padding-bottom:calc(var(--band-h) + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+::selection{background:var(--ink);color:var(--paper)}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;font-family:var(--display);text-wrap:balance;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:700px){.wrap{padding-left:max(2.5rem,env(safe-area-inset-left,0px));padding-right:max(2.5rem,env(safe-area-inset-right,0px))}}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--ink);color:var(--paper);padding:.6rem 1rem;z-index:50;font-weight:700}
+.skip:focus{top:1rem}
+.caps{font-size:.8125rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.muted{color:var(--grey)}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:var(--s3);min-height:4.5rem}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;margin-right:auto}
+.brand img{height:2.6rem;width:auto}
+.nav{display:flex;gap:var(--s3)}
+.nav a{font-weight:700;font-size:.9375rem;text-decoration:none;padding:.5rem 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--ink)}
+.lang{position:relative}
+.lang select{appearance:none;font:700 .875rem var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--ink);
+  padding:.55rem 2rem .55rem .75rem;min-height:44px;cursor:pointer;border-radius:0}
+.lang::after{content:"";position:absolute;right:.8rem;top:50%;width:.4rem;height:.4rem;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.menu-btn{display:none;font:700 .9375rem var(--body);background:none;border:0;color:var(--ink);min-height:44px;padding:0 .25rem;cursor:pointer;align-items:center;gap:.5rem}
+.menu-btn i{display:block;width:1.4rem;height:2px;background:var(--ink);box-shadow:0 6px 0 var(--ink)}
+@media(max-width:860px){
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--ink);flex-direction:column;gap:0;
+    padding:.5rem max(16px,env(safe-area-inset-right,0px)) 1rem max(16px,env(safe-area-inset-left,0px))}
+  .nav.open{display:flex}
+  .nav a{font-size:1.5rem;font-weight:800;padding:.6rem 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:inline-flex}
+}
+@media(max-width:420px){.brand img{height:2.2rem}.top .wrap{gap:.75rem}}
+
+/* hero poster */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{position:relative;padding-block:var(--s5) var(--s5)}
+.wm{position:absolute;pointer-events:none;user-select:none;opacity:.065;width:min(62rem,120vw);right:-14vw;top:-2rem;z-index:0}
+.hero-grid{position:relative;z-index:1;display:grid;gap:var(--s4)}
+.hero h1{font-weight:900;text-transform:uppercase;font-size:clamp(2.6rem,7.6vw,5.5rem);line-height:.95;letter-spacing:-.04em;max-width:14ch;white-space:pre-line}
+.hero h1 span{display:block}
+.subline{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin:var(--s3) 0 0;padding:0}
+.subline li{list-style:none}
+.subline li+li::before{content:"•";margin-right:1rem}
+.label{display:inline-block;background:var(--ink);color:var(--paper);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.9375rem;padding:.55rem .9rem}
+.hero-intro{max-width:36rem;font-size:1.1875rem;line-height:1.55}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.75rem;min-height:3.25rem;padding:.8rem 1.4rem;font:800 1rem var(--body);text-decoration:none;border:2px solid var(--ink);cursor:pointer;border-radius:0;transition:background .15s,color .15s}
+.btn-solid{background:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--paper);color:var(--ink)}
+.btn-line{background:var(--paper);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:1.05rem;height:1.05rem;flex:none}
+.facts{display:grid;gap:.35rem;padding-left:1.1rem;position:relative;font-weight:500}
+.facts::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:5px;background:var(--ink)}
+@media(min-width:900px){
+  .hero .wrap{padding-block:var(--s5) var(--s5)}
+  .hero-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:end;column-gap:var(--s5)}
+  .hero-head{grid-column:1/-1}
+}
+@media(prefers-reduced-motion:no-preference){
+  .hero h1 span{animation:rise .7s cubic-bezier(.16,1,.3,1) both}
+  .hero h1 span:nth-child(2){animation-delay:.08s}
+  .hero h1 span:nth-child(3){animation-delay:.16s}
+  .hero h1 span:nth-child(4){animation-delay:.24s}
+  @keyframes rise{from{transform:translateY(.35em);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(-40% -10% -40% -10%)}}
+}
+
+/* sections */
+section{scroll-margin-top:5rem}
+.sec{padding-block:var(--s5);border-bottom:1px solid var(--line)}
+@media(min-width:900px){.sec{padding-block:var(--s6)}}
+.sec-head{display:grid;gap:var(--s2);margin-bottom:var(--s4);max-width:52rem}
+.sec h2{font-weight:900;text-transform:uppercase;font-size:clamp(2rem,5.2vw,4rem);line-height:.95;letter-spacing:-.035em;white-space:pre-line}
+.lead{font-size:1.125rem;max-width:40rem}
+.rows{border-top:2px solid var(--ink)}
+.row{display:grid;gap:var(--s2) var(--s5);padding-block:var(--s4);border-bottom:1px solid var(--line)}
+@media(min-width:800px){.row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.row h3{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;line-height:1.1;letter-spacing:-.02em}
+.row .txt{margin-top:.6rem;max-width:34rem}
+.items{list-style:none;margin:0;padding:0;align-self:start}
+.items li{padding:.7rem 0;border-bottom:1px solid var(--line);font-weight:500;display:flex;gap:.8rem;align-items:baseline}
+.items li:first-child{padding-top:0}
+.items li::before{content:"";flex:none;width:.55rem;height:.55rem;background:var(--ink);transform:translateY(-.1rem)}
+
+/* about */
+.about .wrap{display:grid;gap:var(--s3)}
+@media(min-width:900px){.about .wrap{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:end;column-gap:var(--s5)}}
+.values{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin:0;padding:0}
+.values li{list-style:none}
+.values li+li::before{content:"•";margin-right:1rem}
+
+/* projects */
+.proj .meta{display:grid;gap:.6rem;align-content:start}
+.status{justify-self:start;font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .6rem;border:1.5px solid var(--ink)}
+.status.on{background:var(--ink);color:var(--paper)}
+
+/* careers */
+.roles{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink);display:grid}
+@media(min-width:800px){.roles{grid-template-columns:1fr 1fr;column-gap:var(--s5)}}
+.roles li{padding:.95rem 0;border-bottom:1px solid var(--line);font-size:clamp(1.125rem,1.8vw,1.375rem);font-weight:700;line-height:1.3}
+.other{display:grid;gap:.5rem;margin-block:var(--s4);padding-left:1.1rem;position:relative;max-width:44rem}
+.other::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:5px;background:var(--ink)}
+.other h3{font-size:1.25rem;font-weight:800}
+.apply{display:grid;gap:var(--s4);margin-top:var(--s5)}
+@media(min-width:900px){.apply{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);column-gap:var(--s5)}}
+.apply h3{font-size:clamp(1.75rem,3.4vw,2.6rem);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:1}
+form{display:grid;gap:var(--s3)}
+.f2{display:grid;gap:var(--s3)}
+@media(min-width:640px){.f2{grid-template-columns:1fr 1fr}}
+.field{display:grid;gap:.35rem;min-width:0}
+.field label{font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.field input,.field select,.field textarea{font:500 1.0625rem var(--body);color:var(--ink);background:var(--paper);border:0;border-bottom:2px solid var(--ink);border-radius:0;padding:.6rem 0;min-height:44px;width:100%}
+.field select{appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 6px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:1.5rem}
+.field textarea{min-height:7rem;resize:vertical;border:2px solid var(--ink);padding:.7rem}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;box-shadow:0 2px 0 0 var(--ink)}
+.field input::placeholder,.field textarea::placeholder{color:var(--grey)}
+.field .req{color:var(--ink)}
+.note{font-size:.9375rem;color:var(--grey);max-width:38rem}
+#form-status{font-weight:700;min-height:1.5em}
+.copyline{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem}
+.copyline strong{font-size:1.125rem;user-select:all}
+.copy{font:700 .75rem var(--body);letter-spacing:.14em;text-transform:uppercase;background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);padding:.45rem .7rem;min-height:36px;cursor:pointer;border-radius:0}
+.copy:hover{background:var(--ink);color:var(--paper)}
+
+/* contact */
+.contact h2{font-size:clamp(2.6rem,8vw,6rem);line-height:.9}
+.cgrid{display:grid;gap:var(--s4);border-top:2px solid var(--ink);padding-top:var(--s4)}
+@media(min-width:800px){.cgrid{grid-template-columns:1fr 1fr;column-gap:var(--s5)}}
+.cblock{display:grid;gap:.5rem;align-content:start}
+.cblock h3{font-size:1.75rem;font-weight:800;letter-spacing:-.02em}
+address{font-style:normal}
+
+/* footer + fixed band */
+.foot{padding-block:var(--s4) var(--s5)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2);font-size:.875rem;color:var(--grey)}
+.foot a{font-weight:700;color:var(--ink)}
+.band{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--band);color:var(--band-ink);padding-bottom:env(safe-area-inset-bottom,0px)}
+.band .wrap{display:flex;align-items:center;min-height:var(--band-h);gap:0;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+.band .wrap::-webkit-scrollbar{display:none}
+.band a,.band span{color:var(--band-ink);font-weight:700;font-size:.875rem;text-decoration:none;padding:.4rem 0}
+.band a:hover{text-decoration:underline}
+.band .div{width:1px;height:1.1rem;background:var(--band-div);margin-inline:1rem;flex:none;padding:0}
+.band .bname{display:flex;align-items:center;gap:.6rem;font-weight:900;letter-spacing:.04em}
+.band .bname::before{content:"";width:4px;height:1.1rem;background:var(--band-ink)}
+.band :focus-visible{outline-color:var(--band-ink)}
+@media(max-width:640px){.band .hide-s{display:none}}
+</style>
+</head>
+<body>
+
+
+<a class="skip" href="#main" data-t="skip">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#main" aria-label="XO-SERVICES"><img src="logo.png" alt="XO-SERVICES" width="598" height="375"></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#services" data-t="servicesTitle">Our services</a>
+      <a href="#projects" data-t="projects">Projects</a>
+      <a href="#careers" data-t="careers">Careers</a>
+      <a href="#contact" data-t="contact">Contact</a>
+    </nav>
+    <div class="lang">
+      <label for="lang" class="sr" data-t="language" hidden>Language</label>
+      <select id="lang" aria-label="Language"></select>
+    </div>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav"><span data-t="menuLabel">Menu</span><i aria-hidden="true"></i></button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="h-hero">
+    <img class="wm" src="logo.png" alt="" aria-hidden="true">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-head">
+          <h1 id="h-hero"></h1>
+          <ul class="subline caps" id="subline"></ul>
+        </div>
+        <div style="display:grid;gap:var(--s3)">
+          <p><span class="label">VCA • VOL-VCA • IPAF</span></p>
+          <p class="hero-intro" data-t="intro"></p>
+          <div class="ctas">
+            <a class="btn btn-solid" href="#contact"><span data-t="projectCta"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+            <a class="btn btn-line" href="#apply"><span data-t="cvCta"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+          </div>
+        </div>
+        <ul class="facts" style="list-style:none;margin:0">
+          <li data-t="crew"></li>
+          <li data-t="langsOnSite"></li>
+          <li>Košice, <span data-t="slovakia"></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="services" aria-labelledby="h-services">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="h-services" data-t="servicesHeading"></h2>
+        <p class="lead" data-t="servicesIntro"></p>
+      </div>
+      <div class="rows" id="offerings"></div>
+    </div>
+  </section>
+
+  <section class="sec about" id="about" aria-labelledby="h-about">
+    <div class="wrap">
+      <h2 id="h-about" data-t="aboutTitle"></h2>
+      <div style="display:grid;gap:var(--s2)">
+        <p class="lead" data-t="aboutText"></p>
+        <ul class="values caps" id="values"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="projects" aria-labelledby="h-projects">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-projects" data-t="projectTitle"></h2></div>
+      <div class="rows">
+        <article class="row proj">
+          <div class="meta">
+            <span class="status on" data-t="ongoing"></span>
+            <p class="caps muted" data-t="belgium"></p>
+            <h3 data-t="dataCentre"></h3>
+          </div>
+          <p class="txt" data-t="belgiumWork"></p>
+        </article>
+        <article class="row proj">
+          <div class="meta">
+            <span class="status" data-t="complete"></span>
+            <p class="caps muted" data-t="uk"></p>
+            <h3 data-t="paper"></h3>
+          </div>
+          <p class="txt" data-t="shotton"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="careers" aria-labelledby="h-careers">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="h-careers" data-t="careerTitle"></h2>
+        <p class="lead" data-t="careerText"></p>
+      </div>
+      <h3 class="caps" style="margin-bottom:var(--s2)" data-t="rolesTitle"></h3>
+      <ul class="roles" id="roles"></ul>
+      <div class="other">
+        <h3 data-t="otherTitle"></h3>
+        <p data-t="otherText"></p>
+      </div>
+      <div class="apply" id="apply">
+        <div style="display:grid;gap:var(--s2);align-content:start">
+          <h3 data-t="application"></h3>
+          <p class="note" data-t="cvNote"></p>
+          <div class="copyline"><strong>info@xoservices.eu</strong><button type="button" class="copy" data-copy="info@xoservices.eu" data-t="copy"></button></div>
+        </div>
+        <form id="cv-form" novalidate>
+          <div class="f2">
+            <div class="field"><label for="f-name"><span data-t="name"></span> <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-email"><span data-t="email"></span> <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="f2">
+            <div class="field"><label for="f-phone" data-t="phone"></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-prof"><span data-t="profession"></span> <span class="req" aria-hidden="true">*</span></label><select id="f-prof" name="profession" required></select></div>
+          </div>
+          <div class="field"><label for="f-msg" data-t="message"></label><textarea id="f-msg" name="message"></textarea></div>
+          <div class="ctas" style="align-items:center"><button class="btn btn-solid" type="submit"><span data-t="send"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-contact" data-t="contactTitle"></h2></div>
+      <div class="cgrid">
+        <div class="cblock">
+          <p class="caps muted" data-t="company"></p>
+          <h3>XO-SERVICES s. r. o.</h3>
+          <address>Jenisejská 45A<br>040 12 Košice<br><span data-t="slovakia"></span></address>
+          <p><span data-t="ico"></span>: 57 302 880</p>
+        </div>
+        <div class="cblock">
+          <p class="caps muted" data-t="ceo"></p>
+          <h3>Tomáš Godora</h3>
+          <div class="copyline"><strong><a href="tel:+421908975983">+421 908 975 983</a></strong><button type="button" class="copy" data-copy="+421 908 975 983" data-t="copy"></button></div>
+          <div class="copyline"><strong><a href="mailto:info@xoservices.eu">info@xoservices.eu</a></strong><button type="button" class="copy" data-copy="info@xoservices.eu" data-t="copy"></button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> XO-SERVICES s. r. o. · <span data-t="ico"></span> 57 302 880</span>
+    <a href="#main" data-t="backTop">Back to top</a>
+  </div>
+</footer>
+
+<div class="band" role="contentinfo" aria-label="XO-SERVICES">
+  <div class="wrap">
+    <span class="bname hide-s">XO-SERVICES</span><span class="div hide-s" aria-hidden="true"></span>
+    <a href="mailto:info@xoservices.eu">info@xoservices.eu</a><span class="div" aria-hidden="true"></span>
+    <a href="tel:+421908975983">+421 908 975 983</a><span class="div hide-s" aria-hidden="true"></span>
+    <span class="hide-s">xoservices.eu</span>
+  </div>
+</div>
+
+<script>
+const I18N = {"en": {"about": "About us", "aboutText": "We are a young company based in Slovakia, working on industrial projects abroad.", "aboutTitle": "Young leadership.\nA responsible approach.", "application": "Introduce yourself", "backTop": "Back to top", "belgium": "Belgium", "belgiumWork": "Ongoing assembly works on a data centre construction project in Belgium. The current scope covers cable routes, supporting structures and cable laying.", "careerText": "Interested in industrial projects abroad? Tell us about your experience, qualifications and availability. Opportunities depend on current project needs.", "careerTitle": "Build your next chapter with us.", "careers": "Careers", "ceo": "Managing director", "chooseRole": "Select your profession", "company": "Company", "complete": "Completed", "contact": "Contact", "contactTitle": "Let’s talk.", "cvNote": "For now, send your CV by email. The button opens a draft in your email app. Attach your CV there before sending.", "cvTitle": "Your CV", "dataCentre": "Data centre", "email": "Email", "hero": "We build the future.\nTogether.", "ico": "Company ID", "illustration": "Illustrative image", "international": "INDUSTRIAL PROJECTS ACROSS BORDERS", "intro": "We are a young, flexible team providing a broad range of assembly and technical services for industrial projects abroad. We adapt our work to the needs of each project.", "menuLabel": "Menu", "message": "Experience and availability", "name": "Full name", "noSubmit": "This form does not send or upload anything automatically.", "offering1Item1": "Cable tray and ladder installation", "offering1Item2": "Cable pulling and laying", "offering1Item3": "Related preparation and assembly work", "offering1Text": "Electrical installation and cable routing work for industrial projects.", "offering1Title": "Electrical installations & cable routes", "offering2Item1": "Metal structure assembly", "offering2Item2": "Installation of supports and brackets", "offering2Item3": "Assembly to project requirements", "offering2Text": "Assembly work on metal structures and their supporting components.", "offering2Title": "Metal structure assembly", "offering3Item1": "Industrial assembly work", "offering3Item2": "Support for on-site project teams", "offering3Item3": "Scope tailored to project needs", "offering3Text": "Flexible assembly and technical support for projects abroad.", "offering3Title": "Industrial assembly", "ongoing": "In progress", "opened": "Email draft requested. Attach your CV and send it from your email app. If it did not open, write to the address below.", "otherText": "We welcome your CV even if your experience does not match the roles below. We assess each applicant individually and may provide training, depending on the role and current opportunities.", "otherTitle": "Your profession is not listed?", "paper": "Paper mill", "phone": "Phone (optional)", "profession": "Profession", "projectCta": "Discuss your project", "projectTitle": "Our work on site.", "projects": "Projects", "roles": ["Qualified electrician", "Electrical assistant", "Steel structure installer", "Crane operator", "Telehandler operator (Manitou)", "Sprinkler and fire protection installer", "Other assembly work", "Other profession / interested in training"], "send": "Open email draft", "service1": "Industrial assembly", "service2": "Cable routes", "service3": "Cable laying", "service4": "Metal structure assembly", "service5": "Electrical installations", "servicesHeading": "Flexible support for industry.", "servicesIntro": "From electrical installations to structural assembly. We adapt our services to the agreed scope and the needs of your project.", "servicesTitle": "Our services", "shotton": "Cable route installation and cable laying at a paper mill in the United Kingdom. The scope included supporting systems, cable trays and ladders, together with associated assembly work.", "skip": "Skip to content", "slovakia": "Slovakia", "uk": "United Kingdom", "value1": "Professional approach", "value2": "Quality", "value3": "Efficiency", "value4": "On-time delivery", "writeCta": "Write to us", "heroHead": "Electrical\nand assembly\ncrews\nfor industry", "crew": "Crew of 10–15 people, scalable", "langsOnSite": "On site in English, Slovak and Polish", "cvCta": "Send your CV", "copy": "Copy", "copied": "Copied", "rolesTitle": "Roles we hire for", "language": "Language", "fixField": "Please fill in: {field}"}, "cs": {"about": "O nás", "aboutText": "Jsme mladá firma se sídlem na Slovensku, která se věnuje průmyslovým projektům v zahraničí.", "aboutTitle": "Mladé vedení. Zodpovědný přístup.", "application": "Představ se nám", "backTop": "Zpět nahoru", "belgium": "Belgie", "belgiumWork": "Montážní práce v rámci výstavby datového centra v Belgii. Aktuální rozsah zahrnuje realizaci kabelových tras, montáž podpůrných konstrukcí a pokládku kabelových vedení.", "careerText": "Máš zájem o práci na průmyslových projektech v zahraničí? Představ nám své zkušenosti, kvalifikaci a dostupnost. Příležitosti závisí na aktuálních potřebách projektů.", "careerTitle": "Tvá další příležitost začíná tady.", "careers": "Pracuj s námi", "ceo": "Jednatel", "chooseRole": "Vyber profesi", "company": "Firma", "complete": "Dokončený projekt", "contact": "Kontakt", "contactTitle": "Promluvme si.", "cvNote": "Životopis zatím pošli e-mailem. Tlačítko otevře koncept ve tvé e-mailové aplikaci. Před odesláním k němu přilož životopis.", "cvTitle": "Tvůj životopis", "dataCentre": "Datové centrum", "email": "E-mail", "hero": "Budujeme budoucnost.\nSpolečně.", "ico": "IČO", "illustration": "Ilustrační obrázek", "international": "PRŮMYSLOVÉ PROJEKTY BEZ HRANIC", "intro": "Jsme mladý a flexibilní tým, který poskytuje široké spektrum montážních a technických služeb pro průmyslové projekty v zahraničí. Naši práci přizpůsobujeme potřebám každého projektu.", "menuLabel": "Menu", "message": "Zkušenosti a dostupnost", "name": "Jméno a příjmení", "noSubmit": "Tento formulář nic automaticky neodesílá ani nenahrává.", "offering1Item1": "Montáž kabelových žlabů a žebříků", "offering1Item2": "Tahání a pokládka kabelů", "offering1Item3": "Související přípravné a montážní práce", "offering1Text": "Elektroinstalační práce a montáž kabelových tras pro průmyslové projekty.", "offering1Title": "Elektroinstalace a kabelové trasy", "offering2Item1": "Montáž kovových konstrukcí", "offering2Item2": "Montáž podpěr a konzol", "offering2Item3": "Montáž podle požadavků projektu", "offering2Text": "Montážní práce na kovových konstrukcích a jejich nosných prvcích.", "offering2Title": "Montáž kovových konstrukcí", "offering3Item1": "Průmyslové montážní práce", "offering3Item2": "Podpora projektových týmů na stavbě", "offering3Item3": "Rozsah prací podle potřeb projektu", "offering3Text": "Flexibilní montážní a technická podpora pro projekty v zahraničí.", "offering3Title": "Průmyslové montážní práce", "ongoing": "Probíhající projekt", "opened": "Bylo vyžádáno otevření e-mailu. Přilož životopis a odešli zprávu ve své aplikaci. Pokud se neotevřela, napiš na adresu níže.", "otherText": "Pošli nám životopis, i když nemáš zkušenosti s uvedenými pracemi. Každého uchazeče posuzujeme individuálně a podle možností a požadavků pozice můžeme zajistit zaškolení.", "otherTitle": "Nenašel jsi svou profesi?", "paper": "Papírna", "phone": "Telefon (nepovinný)", "profession": "Profese", "projectCta": "Proberme váš projekt", "projectTitle": "Naše práce na projektech.", "projects": "Projekty", "roles": ["Samostatný elektrikář", "Pomocný pracovník elektroinstalací", "Montážník kovových konstrukcí", "Jeřábník", "Obsluha teleskopického manipulátoru (Manitou)", "Montážník sprinklerových a protipožárních systémů", "Montážní pracovník – ostatní práce", "Jiná profese / zájem o zaškolení"], "send": "Otevřít e-mail se žádostí", "service1": "Průmyslové montáže", "service2": "Kabelové trasy", "service3": "Pokládka kabelů", "service4": "Montáž kovových konstrukcí", "service5": "Elektroinstalace", "servicesHeading": "Flexibilní podpora pro průmysl.", "servicesIntro": "Od elektroinstalací po montáž konstrukcí. Naše služby přizpůsobujeme dohodnutému rozsahu a potřebám vašeho projektu.", "servicesTitle": "Naše služby", "shotton": "Realizace kabelových tras a pokládka kabelových vedení v areálu papírny ve Velké Británii. Rozsah prací zahrnoval montáž nosných systémů, kabelových žlabů a žebříků včetně souvisejících montážních prací.", "skip": "Přejít na obsah", "slovakia": "Slovensko", "uk": "Spojené království", "value1": "Profesionální přístup", "value2": "Kvalita", "value3": "Efektivita", "value4": "Dodržování termínů", "writeCta": "Napište nám", "heroHead": "Elektro\na montážní\nparty\npro průmysl", "crew": "Parta 10–15 lidí, podle potřeby více", "langsOnSite": "Na stavbě anglicky, slovensky a polsky", "cvCta": "Pošli životopis", "copy": "Kopírovat", "copied": "Zkopírováno", "rolesTitle": "Koho hledáme", "language": "Jazyk", "fixField": "Vyplň prosím: {field}"}, "sk": {"about": "O nás", "aboutText": "Sme mladá firma so sídlom na Slovensku, ktorá sa venuje priemyselným projektom v zahraničí.", "aboutTitle": "Mladé vedenie.\nZodpovedný prístup.", "application": "Predstav sa nám", "backTop": "Späť hore", "belgium": "Belgicko", "belgiumWork": "Montážne práce v rámci výstavby dátového centra v Belgicku. Aktuálny rozsah zahŕňa realizáciu káblových trás, montáž podporných konštrukcií a pokládku káblových vedení.", "careerText": "Máš záujem o prácu na priemyselných projektoch v zahraničí? Predstav nám svoje skúsenosti, kvalifikáciu a dostupnosť. Príležitosti závisia od aktuálnych potrieb projektov.", "careerTitle": "Tvoja ďalšia príležitosť začína tu.", "careers": "Pracuj s nami", "ceo": "Konateľ", "chooseRole": "Vyber profesiu", "company": "Firma", "complete": "Ukončený projekt", "contact": "Kontakt", "contactTitle": "Porozprávajme sa.", "cvNote": "Životopis zatiaľ pošli e-mailom. Tlačidlo otvorí koncept v tvojej e-mailovej aplikácii. Pred odoslaním tam prilož životopis.", "cvTitle": "Tvoj životopis", "dataCentre": "Dátové centrum", "email": "E-mail", "hero": "Budujeme budúcnosť.\nSpoločne.", "ico": "IČO", "illustration": "Ilustračný obrázok", "international": "PRIEMYSELNÉ PROJEKTY BEZ HRANÍC", "intro": "Sme mladý a flexibilný tím, ktorý poskytuje široké spektrum montážnych a technických služieb pre priemyselné projekty v zahraničí. Našu prácu prispôsobujeme potrebám každého projektu.", "menuLabel": "Menu", "message": "Skúsenosti a dostupnosť", "name": "Meno a priezvisko", "noSubmit": "Tento formulár nič automaticky neodosiela ani nenahráva.", "offering1Item1": "Montáž káblových žľabov a rebríkov", "offering1Item2": "Ťahanie a ukladanie káblov", "offering1Item3": "Súvisiace prípravné a montážne práce", "offering1Text": "Elektroinštalačné práce a montáž káblových trás pre priemyselné projekty.", "offering1Title": "Elektroinštalácie a káblové trasy", "offering2Item1": "Montáž kovových konštrukcií", "offering2Item2": "Montáž podpier a konzol", "offering2Item3": "Montáž podľa požiadaviek projektu", "offering2Text": "Montážne práce na kovových konštrukciách a ich nosných prvkoch.", "offering2Title": "Montáž kovových konštrukcií", "offering3Item1": "Priemyselné montážne práce", "offering3Item2": "Podpora projektových tímov na stavbe", "offering3Item3": "Rozsah prác podľa potrieb projektu", "offering3Text": "Flexibilná montážna a technická podpora pre projekty v zahraničí.", "offering3Title": "Priemyselné montážne práce", "ongoing": "Prebiehajúci projekt", "opened": "Požiadali sme o otvorenie e-mailu. Prilož životopis a odošli ho v e-mailovej aplikácii. Ak sa neotvorila, napíš na adresu nižšie.", "otherText": "Pošli nám životopis, aj keď nemáš skúsenosti s uvedenými prácami. Každého uchádzača posudzujeme individuálne a podľa aktuálnych možností a požiadaviek pozície vieme zabezpečiť aj zaškolenie.", "otherTitle": "Nenašiel si svoju profesiu?", "paper": "Papierenský závod", "phone": "Telefón (nepovinný)", "profession": "Profesia", "projectCta": "Preberme váš projekt", "projectTitle": "Naša práca na projektoch.", "projects": "Projekty", "roles": ["Samostatný elektrikár", "Pomocný pracovník pri elektroinštaláciách", "Montážnik kovových konštrukcií", "Žeriavnik", "Operátor teleskopického manipulátora (Manitou)", "Montážnik sprinklerových a protipožiarnych systémov", "Montážny pracovník – ostatné práce", "Iná profesia / mám záujem o zaškolenie"], "send": "Otvoriť e-mail so žiadosťou", "service1": "Priemyselné montáže", "service2": "Káblové trasy", "service3": "Ukladanie káblov", "service4": "Montáž kovových konštrukcií", "service5": "Elektroinštalácie", "servicesHeading": "Flexibilná podpora pre priemysel.", "servicesIntro": "Od elektroinštalácií po montáž konštrukcií. Naše služby prispôsobujeme dohodnutému rozsahu a potrebám vášho projektu.", "servicesTitle": "Naše služby", "shotton": "Realizácia káblových trás a pokládka káblových vedení v areáli papierne vo Veľkej Británii. Rozsah prác zahŕňal montáž nosných systémov, káblových žľabov a rebríkov vrátane súvisiacich montážnych prác.", "skip": "Preskočiť na obsah", "slovakia": "Slovensko", "uk": "Spojené kráľovstvo", "value1": "Profesionálny prístup", "value2": "Kvalita", "value3": "Efektivita", "value4": "Dodržiavanie termínov", "writeCta": "Napíšte nám", "heroHead": "Elektro\na montážne\npartie\npre priemysel", "crew": "Partia 10–15 ľudí, podľa potreby viac", "langsOnSite": "Na stavbe po anglicky, slovensky a poľsky", "cvCta": "Pošli životopis", "copy": "Kopírovať", "copied": "Skopírované", "rolesTitle": "Koho hľadáme", "language": "Jazyk", "fixField": "Vyplň prosím: {field}"}, "de": {"about": "Über uns", "aboutText": "Wir sind ein junges Unternehmen mit Sitz in der Slowakei und arbeiten an Industrieprojekten im Ausland.", "aboutTitle": "Junge Führung. Verantwortungsvolles Handeln.", "application": "Stell dich vor", "backTop": "Nach oben", "belgium": "Belgien", "belgiumWork": "Laufende Montagearbeiten im Rahmen des Rechenzentrumsbaus in Belgien. Der aktuelle Leistungsumfang umfasst Kabeltrassen, Tragkonstruktionen und Kabelverlegung.", "careerText": "Du möchtest auf Industrieprojekten im Ausland arbeiten? Erzähle uns von deiner Erfahrung, Qualifikation und Verfügbarkeit. Einsatzmöglichkeiten hängen vom aktuellen Projektbedarf ab.", "careerTitle": "Gestalte deinen nächsten Schritt mit uns.", "careers": "Karriere", "ceo": "Geschäftsführer", "chooseRole": "Beruf auswählen", "company": "Unternehmen", "complete": "Abgeschlossen", "contact": "Kontakt", "contactTitle": "Lass uns sprechen.", "cvNote": "Sende deinen Lebenslauf vorerst per E-Mail. Der Button öffnet einen Entwurf in deinem E-Mail-Programm. Füge dort vor dem Senden deinen Lebenslauf hinzu.", "cvTitle": "Dein Lebenslauf", "dataCentre": "Rechenzentrum", "email": "E-Mail", "hero": "Wir bauen die Zukunft.\nGemeinsam.", "ico": "Unternehmens-ID", "illustration": "Illustrative Darstellung", "international": "INDUSTRIEPROJEKTE ÜBER GRENZEN HINWEG", "intro": "Wir sind ein junges, flexibles Team und bieten ein breites Spektrum an Montage- und technischen Dienstleistungen für Industrieprojekte im Ausland. Wir passen unsere Arbeit den Anforderungen jedes Projekts an.", "menuLabel": "Menü", "message": "Erfahrung und Verfügbarkeit", "name": "Vor- und Nachname", "noSubmit": "Dieses Formular sendet oder lädt nichts automatisch hoch.", "offering1Item1": "Montage von Kabelrinnen und Kabelleitern", "offering1Item2": "Kabeleinzug und Kabelverlegung", "offering1Item3": "Zugehörige Vorbereitungs- und Montagearbeiten", "offering1Text": "Elektroinstallationsarbeiten und Kabeltrassenmontage für Industrieprojekte.", "offering1Title": "Elektroinstallationen und Kabeltrassen", "offering2Item1": "Montage von Metallkonstruktionen", "offering2Item2": "Montage von Stützen und Konsolen", "offering2Item3": "Montage nach Projektanforderungen", "offering2Text": "Montagearbeiten an Metallkonstruktionen und ihren tragenden Bauteilen.", "offering2Title": "Montage von Metallkonstruktionen", "offering3Item1": "Industrielle Montagearbeiten", "offering3Item2": "Unterstützung der Projektteams vor Ort", "offering3Item3": "Leistungsumfang nach Projektbedarf", "offering3Text": "Flexible Montage und technische Unterstützung für Projekte im Ausland.", "offering3Title": "Industriemontage", "ongoing": "Laufendes Projekt", "opened": "Das Öffnen der E-Mail wurde angefordert. Füge deinen Lebenslauf hinzu und sende die Nachricht. Falls sich nichts öffnet, nutze die Adresse unten.", "otherText": "Sende uns deinen Lebenslauf auch ohne Erfahrung in diesen Tätigkeiten. Wir prüfen jede Bewerbung individuell und können je nach Stelle und Möglichkeiten eine Einarbeitung anbieten.", "otherTitle": "Dein Beruf ist nicht dabei?", "paper": "Papierfabrik", "phone": "Telefon (optional)", "profession": "Beruf", "projectCta": "Ihr Projekt besprechen", "projectTitle": "Unsere Arbeit vor Ort.", "projects": "Projekte", "roles": ["Qualifizierter Elektriker", "Elektrohelfer", "Stahlbaumonteur", "Kranführer", "Teleskopladerfahrer (Manitou)", "Monteur für Sprinkler- und Brandschutzanlagen", "Sonstige Montagearbeiten", "Anderer Beruf / Interesse an Einarbeitung"], "send": "E-Mail-Entwurf öffnen", "service1": "Industriemontage", "service2": "Kabeltrassen", "service3": "Kabelverlegung", "service4": "Montage von Metallkonstruktionen", "service5": "Elektroinstallationen", "servicesHeading": "Flexible Unterstützung für die Industrie.", "servicesIntro": "Von Elektroinstallationen bis zur Strukturmontage. Wir richten unsere Leistungen nach dem vereinbarten Umfang und den Anforderungen Ihres Projekts aus.", "servicesTitle": "Unsere Leistungen", "shotton": "Kabeltrassenmontage und Kabelverlegung in einer Papierfabrik in Großbritannien. Der Leistungsumfang umfasste Tragsysteme, Kabelrinnen und Kabelleitern sowie zugehörige Montagearbeiten.", "skip": "Zum Inhalt", "slovakia": "Slowakei", "uk": "Vereinigtes Königreich", "value1": "Professionelles Vorgehen", "value2": "Qualität", "value3": "Effizienz", "value4": "Termintreue", "writeCta": "Schreiben Sie uns", "heroHead": "Elektro-\nund Montage-\nteams für\ndie Industrie", "crew": "Team aus 10–15 Personen, erweiterbar", "langsOnSite": "Vor Ort auf Englisch, Slowakisch und Polnisch", "cvCta": "Lebenslauf senden", "copy": "Kopieren", "copied": "Kopiert", "rolesTitle": "Wen wir suchen", "language": "Sprache", "fixField": "Bitte ausfüllen: {field}"}, "pl": {"about": "O nas", "aboutText": "Jesteśmy młodą firmą z siedzibą na Słowacji, działającą przy projektach przemysłowych za granicą.", "aboutTitle": "Młode kierownictwo. Odpowiedzialne podejście.", "application": "Przedstaw się", "backTop": "Na górę", "belgium": "Belgia", "belgiumWork": "Trwające prace montażowe w ramach budowy centrum danych w Belgii. Aktualny zakres obejmuje trasy kablowe, konstrukcje wsporcze oraz układanie kabli.", "careerText": "Chcesz pracować przy projektach przemysłowych za granicą? Opowiedz o swoim doświadczeniu, kwalifikacjach i dostępności. Możliwości zależą od aktualnych potrzeb projektów.", "careerTitle": "Zrób kolejny krok z nami.", "careers": "Praca z nami", "ceo": "Dyrektor zarządzający", "chooseRole": "Wybierz zawód", "company": "Firma", "complete": "Zakończony", "contact": "Kontakt", "contactTitle": "Porozmawiajmy.", "cvNote": "Na razie prześlij CV e-mailem. Przycisk otwiera szkic w Twojej aplikacji pocztowej. Przed wysłaniem dołącz tam CV.", "cvTitle": "Twoje CV", "dataCentre": "Centrum danych", "email": "E-mail", "hero": "Budujemy przyszłość.\nRazem.", "ico": "Numer firmy", "illustration": "Zdjęcie poglądowe", "international": "PROJEKTY PRZEMYSŁOWE PONAD GRANICAMI", "intro": "Jesteśmy młodym, elastycznym zespołem oferującym szeroki zakres usług montażowych i technicznych dla projektów przemysłowych za granicą. Dostosowujemy naszą pracę do potrzeb każdego projektu.", "menuLabel": "Menu", "message": "Doświadczenie i dostępność", "name": "Imię i nazwisko", "noSubmit": "Ten formularz nie wysyła ani nie przesyła plików automatycznie.", "offering1Item1": "Montaż koryt i drabin kablowych", "offering1Item2": "Przeciąganie i układanie kabli", "offering1Item3": "Powiązane prace przygotowawcze i montażowe", "offering1Text": "Prace elektroinstalacyjne i montaż tras kablowych przy projektach przemysłowych.", "offering1Title": "Instalacje elektryczne i trasy kablowe", "offering2Item1": "Montaż konstrukcji metalowych", "offering2Item2": "Montaż podpór i wsporników", "offering2Item3": "Montaż zgodny z wymaganiami projektu", "offering2Text": "Prace montażowe przy konstrukcjach metalowych i ich elementach nośnych.", "offering2Title": "Montaż konstrukcji metalowych", "offering3Item1": "Przemysłowe prace montażowe", "offering3Item2": "Wsparcie zespołów na budowie", "offering3Item3": "Zakres dostosowany do potrzeb projektu", "offering3Text": "Elastyczne wsparcie montażowe i techniczne dla projektów za granicą.", "offering3Title": "Montaż przemysłowy", "ongoing": "W trakcie realizacji", "opened": "Wywołano otwarcie e-maila. Dołącz CV i wyślij wiadomość. Jeśli aplikacja się nie otworzyła, napisz na adres poniżej.", "otherText": "Wyślij CV, nawet jeśli nie masz doświadczenia w wymienionych pracach. Każde zgłoszenie rozpatrujemy indywidualnie. W zależności od stanowiska i możliwości możemy zapewnić przyuczenie.", "otherTitle": "Nie ma tu Twojego zawodu?", "paper": "Papiernia", "phone": "Telefon (opcjonalnie)", "profession": "Zawód", "projectCta": "Porozmawiajmy o projekcie", "projectTitle": "Nasza praca na projektach.", "projects": "Projekty", "roles": ["Samodzielny elektryk", "Pomocnik elektryka", "Monter konstrukcji stalowych", "Operator żurawia", "Operator ładowarki teleskopowej (Manitou)", "Monter instalacji tryskaczowych i przeciwpożarowych", "Pozostałe prace montażowe", "Inny zawód / zainteresowanie przyuczeniem"], "send": "Otwórz wiadomość e-mail", "service1": "Montaż przemysłowy", "service2": "Trasy kablowe", "service3": "Układanie kabli", "service4": "Montaż konstrukcji metalowych", "service5": "Instalacje elektryczne", "servicesHeading": "Elastyczne wsparcie dla przemysłu.", "servicesIntro": "Od instalacji elektrycznych po montaż konstrukcji. Dostosowujemy usługi do uzgodnionego zakresu i potrzeb projektu.", "servicesTitle": "Nasze usługi", "shotton": "Montaż tras kablowych i układanie przewodów na terenie papierni w Wielkiej Brytanii. Zakres obejmował systemy wsporcze, koryta i drabiny kablowe oraz powiązane prace montażowe.", "skip": "Przejdź do treści", "slovakia": "Słowacja", "uk": "Wielka Brytania", "value1": "Profesjonalne podejście", "value2": "Jakość", "value3": "Efektywność", "value4": "Terminowość", "writeCta": "Napisz do nas", "heroHead": "Ekipy\nelektryczne\ni montażowe\ndla przemysłu", "crew": "Ekipa 10–15 osób, z możliwością rozbudowy", "langsOnSite": "Na budowie po angielsku, słowacku i polsku", "cvCta": "Wyślij CV", "copy": "Kopiuj", "copied": "Skopiowano", "rolesTitle": "Kogo szukamy", "language": "Język", "fixField": "Uzupełnij: {field}"}, "fr": {"about": "À propos", "aboutText": "Nous sommes une jeune entreprise basée en Slovaquie, active sur des projets industriels à l’étranger.", "aboutTitle": "Une direction jeune. Une approche responsable.", "application": "Présentez-vous", "backTop": "Retour en haut", "belgium": "Belgique", "belgiumWork": "Travaux de montage en cours dans le cadre de la construction d’un centre de données en Belgique. Le périmètre actuel comprend les chemins de câbles, les structures de support et la pose de câbles.", "careerText": "Vous souhaitez travailler sur des projets industriels à l’étranger ? Présentez-nous votre expérience, vos qualifications et vos disponibilités. Les opportunités dépendent des besoins des projets.", "careerTitle": "Construisez la suite avec nous.", "careers": "Nous rejoindre", "ceo": "Gérant", "chooseRole": "Choisissez votre métier", "company": "Entreprise", "complete": "Terminé", "contact": "Contact", "contactTitle": "Parlons de votre projet.", "cvNote": "Pour le moment, envoyez votre CV par e-mail. Le bouton ouvre un brouillon dans votre application de messagerie. Joignez-y votre CV avant l’envoi.", "cvTitle": "Votre CV", "dataCentre": "Centre de données", "email": "E-mail", "hero": "Nous construisons l’avenir.\nEnsemble.", "ico": "N° d’identification", "illustration": "Image d’illustration", "international": "DES PROJETS INDUSTRIELS AU-DELÀ DES FRONTIÈRES", "intro": "Nous sommes une équipe jeune et flexible proposant une large gamme de services de montage et de services techniques pour les projets industriels à l’étranger. Nous adaptons notre travail aux besoins de chaque projet.", "menuLabel": "Menu", "message": "Expérience et disponibilités", "name": "Nom complet", "noSubmit": "Ce formulaire n’envoie et ne téléverse rien automatiquement.", "offering1Item1": "Montage de chemins et échelles à câbles", "offering1Item2": "Tirage et pose de câbles", "offering1Item3": "Travaux de préparation et de montage associés", "offering1Text": "Travaux d’installation électrique et de chemins de câbles pour les projets industriels.", "offering1Title": "Installations électriques et chemins de câbles", "offering2Item1": "Montage de structures métalliques", "offering2Item2": "Installation de supports et de consoles", "offering2Item3": "Montage selon les exigences du projet", "offering2Text": "Travaux de montage de structures métalliques et de leurs éléments porteurs.", "offering2Title": "Montage de structures métalliques", "offering3Item1": "Travaux de montage industriel", "offering3Item2": "Soutien aux équipes sur chantier", "offering3Item3": "Périmètre adapté aux besoins du projet", "offering3Text": "Un soutien technique et de montage flexible pour les projets à l’étranger.", "offering3Title": "Montage industriel", "ongoing": "En cours", "opened": "Ouverture de l’e-mail demandée. Joignez votre CV et envoyez le message depuis votre messagerie. Si rien ne s’ouvre, écrivez à l’adresse ci-dessous.", "otherText": "Envoyez-nous votre CV même sans expérience dans ces métiers. Chaque candidature est étudiée individuellement. Une formation peut être proposée selon le poste et les possibilités du moment.", "otherTitle": "Votre métier ne figure pas dans la liste ?", "paper": "Usine de papier", "phone": "Téléphone (facultatif)", "profession": "Métier", "projectCta": "Parlons de votre projet", "projectTitle": "Notre travail sur le terrain.", "projects": "Projets", "roles": ["Électricien qualifié", "Aide-électricien", "Monteur de structures métalliques", "Grutier", "Conducteur de chariot télescopique (Manitou)", "Monteur de sprinklers et systèmes de protection incendie", "Autres travaux de montage", "Autre métier / intéressé par une formation"], "send": "Ouvrir un e-mail", "service1": "Montage industriel", "service2": "Chemins de câbles", "service3": "Pose de câbles", "service4": "Montage de structures métalliques", "service5": "Installations électriques", "servicesHeading": "Un soutien flexible pour l’industrie.", "servicesIntro": "Des installations électriques au montage de structures. Nous adaptons nos services au périmètre convenu et aux besoins de votre projet.", "servicesTitle": "Nos services", "shotton": "Installation de chemins de câbles et pose de câbles dans une usine de papier au Royaume-Uni. Les travaux comprenaient le montage des systèmes de support, des chemins et échelles à câbles, ainsi que les travaux de montage associés.", "skip": "Aller au contenu", "slovakia": "Slovaquie", "uk": "Royaume-Uni", "value1": "Approche professionnelle", "value2": "Qualité", "value3": "Efficacité", "value4": "Respect des délais", "writeCta": "Écrivez-nous", "heroHead": "Équipes\nélectriques\net de montage\npour l’industrie", "crew": "Équipe de 10 à 15 personnes, extensible", "langsOnSite": "Sur site en anglais, slovaque et polonais", "cvCta": "Envoyer votre CV", "copy": "Copier", "copied": "Copié", "rolesTitle": "Qui nous recherchons", "language": "Langue", "fixField": "Veuillez remplir : {field}"}, "nl": {"about": "Over ons", "aboutText": "Wij zijn een jong bedrijf gevestigd in Slowakije, actief op industriële projecten in het buitenland.", "aboutTitle": "Jonge leiding. Een verantwoorde aanpak.", "application": "Stel jezelf voor", "backTop": "Naar boven", "belgium": "België", "belgiumWork": "Lopende montagewerkzaamheden bij de bouw van een datacenter in België. De huidige werkzaamheden omvatten kabeltracés, ondersteunende constructies en kabelaanleg.", "careerText": "Wil je aan industriële projecten in het buitenland werken? Vertel ons over je ervaring, kwalificaties en beschikbaarheid. Mogelijkheden hangen af van de actuele projectbehoeften.", "careerTitle": "Zet je volgende stap met ons.", "careers": "Werken bij ons", "ceo": "Directeur", "chooseRole": "Kies je beroep", "company": "Bedrijf", "complete": "Afgerond", "contact": "Contact", "contactTitle": "Laten we kennismaken.", "cvNote": "Stuur je cv voorlopig per e-mail. De knop opent een concept in je e-mailprogramma. Voeg daar je cv toe voordat je het bericht verstuurt.", "cvTitle": "Je cv", "dataCentre": "Datacenter", "email": "E-mail", "hero": "Wij bouwen de toekomst.\nSamen.", "ico": "Bedrijfsnummer", "illustration": "Illustratieve afbeelding", "international": "INDUSTRIËLE PROJECTEN OVER DE GRENZEN HEEN", "intro": "Wij zijn een jong, flexibel team dat een breed scala aan montage- en technische diensten biedt voor industriële projecten in het buitenland. Wij stemmen ons werk af op de behoeften van elk project.", "menuLabel": "Menu", "message": "Ervaring en beschikbaarheid", "name": "Volledige naam", "noSubmit": "Dit formulier verstuurt of uploadt niets automatisch.", "offering1Item1": "Montage van kabelgoten en kabelladders", "offering1Item2": "Kabels trekken en leggen", "offering1Item3": "Bijbehorende voorbereiding en montage", "offering1Text": "Elektrische installatiewerkzaamheden en kabeltracés voor industriële projecten.", "offering1Title": "Elektrische installaties en kabeltracés", "offering2Item1": "Montage van metaalconstructies", "offering2Item2": "Montage van steunen en consoles", "offering2Item3": "Montage volgens projecteisen", "offering2Text": "Montagewerkzaamheden aan metaalconstructies en ondersteunende onderdelen.", "offering2Title": "Montage van metaalconstructies", "offering3Item1": "Industriële montagewerkzaamheden", "offering3Item2": "Ondersteuning van projectteams op locatie", "offering3Item3": "Omvang afgestemd op het project", "offering3Text": "Flexibele montage en technische ondersteuning voor projecten in het buitenland.", "offering3Title": "Industriële montage", "ongoing": "Lopend project", "opened": "Het openen van een e-mail is aangevraagd. Voeg je cv toe en verstuur het bericht. Opent er niets? Schrijf dan naar het onderstaande adres.", "otherText": "Stuur je cv ook als je geen ervaring hebt met deze werkzaamheden. We beoordelen elke kandidaat individueel en kunnen afhankelijk van de functie en mogelijkheden opleiding bieden.", "otherTitle": "Staat jouw beroep er niet bij?", "paper": "Papierfabriek", "phone": "Telefoon (optioneel)", "profession": "Beroep", "projectCta": "Bespreek uw project", "projectTitle": "Ons werk op locatie.", "projects": "Projecten", "roles": ["Zelfstandig elektricien", "Hulpelektricien", "Monteur staalconstructies", "Kraanmachinist", "Verreikerbestuurder (Manitou)", "Monteur sprinkler- en brandbeveiligingssystemen", "Overige montagewerkzaamheden", "Ander beroep / interesse in opleiding"], "send": "E-mailconcept openen", "service1": "Industriële montage", "service2": "Kabeltracés", "service3": "Kabelaanleg", "service4": "Montage van metaalconstructies", "service5": "Elektrische installaties", "servicesHeading": "Flexibele ondersteuning voor de industrie.", "servicesIntro": "Van elektrische installaties tot constructiemontage. Wij stemmen onze diensten af op de afgesproken omvang en de behoeften van uw project.", "servicesTitle": "Onze diensten", "shotton": "Montage van kabeltracés en kabelaanleg in een papierfabriek in het Verenigd Koninkrijk. De werkzaamheden omvatten draagconstructies, kabelgoten en kabelladders, inclusief bijbehorende montage.", "skip": "Naar inhoud", "slovakia": "Slowakije", "uk": "Verenigd Koninkrijk", "value1": "Professionele aanpak", "value2": "Kwaliteit", "value3": "Efficiëntie", "value4": "Afspraken nakomen", "writeCta": "Schrijf ons", "heroHead": "Elektro-\nen montage-\nploegen voor\nde industrie", "crew": "Ploeg van 10–15 mensen, uitbreidbaar", "langsOnSite": "Op locatie in het Engels, Slowaaks en Pools", "cvCta": "Stuur je cv", "copy": "Kopiëren", "copied": "Gekopieerd", "rolesTitle": "Wie we zoeken", "language": "Taal", "fixField": "Vul in: {field}"}, "es": {"about": "Nosotros", "aboutText": "Somos una empresa joven con sede en Eslovaquia que trabaja en proyectos industriales en el extranjero.", "aboutTitle": "Dirección joven. Un enfoque responsable.", "application": "Preséntate", "backTop": "Volver arriba", "belgium": "Bélgica", "belgiumWork": "Trabajos de montaje en curso dentro de la construcción de un centro de datos en Bélgica. El alcance actual comprende canalizaciones, estructuras de soporte y tendido de cables.", "careerText": "¿Te interesa trabajar en proyectos industriales en el extranjero? Cuéntanos tu experiencia, cualificación y disponibilidad. Las oportunidades dependen de las necesidades de los proyectos.", "careerTitle": "Da tu próximo paso con nosotros.", "careers": "Trabaja con nosotros", "ceo": "Director gerente", "chooseRole": "Selecciona tu profesión", "company": "Empresa", "complete": "Finalizado", "contact": "Contacto", "contactTitle": "Hablemos.", "cvNote": "Por ahora, envía tu CV por correo electrónico. El botón abre un borrador en tu aplicación de correo. Adjunta allí tu CV antes de enviarlo.", "cvTitle": "Tu CV", "dataCentre": "Centro de datos", "email": "Correo electrónico", "hero": "Construimos el futuro.\nJuntos.", "ico": "Número de empresa", "illustration": "Imagen ilustrativa", "international": "PROYECTOS INDUSTRIALES SIN FRONTERAS", "intro": "Somos un equipo joven y flexible que ofrece una amplia gama de servicios de montaje y servicios técnicos para proyectos industriales en el extranjero. Adaptamos nuestro trabajo a las necesidades de cada proyecto.", "menuLabel": "Menú", "message": "Experiencia y disponibilidad", "name": "Nombre y apellidos", "noSubmit": "Este formulario no envía ni sube archivos automáticamente.", "offering1Item1": "Montaje de bandejas y escaleras portacables", "offering1Item2": "Tendido y colocación de cables", "offering1Item3": "Trabajos de preparación y montaje asociados", "offering1Text": "Trabajos de instalación eléctrica y canalizaciones de cables para proyectos industriales.", "offering1Title": "Instalaciones eléctricas y canalizaciones", "offering2Item1": "Montaje de estructuras metálicas", "offering2Item2": "Instalación de soportes y ménsulas", "offering2Item3": "Montaje según los requisitos del proyecto", "offering2Text": "Trabajos de montaje de estructuras metálicas y sus elementos de soporte.", "offering2Title": "Montaje de estructuras metálicas", "offering3Item1": "Trabajos de montaje industrial", "offering3Item2": "Apoyo a equipos de proyecto en obra", "offering3Item3": "Alcance adaptado a las necesidades del proyecto", "offering3Text": "Apoyo técnico y de montaje flexible para proyectos en el extranjero.", "offering3Title": "Montaje industrial", "ongoing": "En curso", "opened": "Se ha solicitado abrir el correo. Adjunta tu CV y envía el mensaje. Si no se abre, escribe a la dirección de abajo.", "otherText": "Envíanos tu CV aunque no tengas experiencia en estos trabajos. Evaluamos cada candidatura individualmente y podemos ofrecer formación según el puesto y las posibilidades del momento.", "otherTitle": "¿No aparece tu profesión?", "paper": "Fábrica de papel", "phone": "Teléfono (opcional)", "profession": "Profesión", "projectCta": "Hablemos de su proyecto", "projectTitle": "Nuestro trabajo en obra.", "projects": "Proyectos", "roles": ["Electricista cualificado", "Ayudante de electricista", "Montador de estructuras metálicas", "Operador de grúa", "Operador de manipulador telescópico (Manitou)", "Montador de rociadores y sistemas contra incendios", "Otros trabajos de montaje", "Otra profesión / interés en formación"], "send": "Abrir borrador de correo", "service1": "Montaje industrial", "service2": "Canalizaciones de cables", "service3": "Tendido de cables", "service4": "Montaje de estructuras metálicas", "service5": "Instalaciones eléctricas", "servicesHeading": "Apoyo flexible para la industria.", "servicesIntro": "Desde instalaciones eléctricas hasta montaje de estructuras. Adaptamos nuestros servicios al alcance acordado y a las necesidades de su proyecto.", "servicesTitle": "Nuestros servicios", "shotton": "Montaje de canalizaciones y tendido de cables en una fábrica de papel del Reino Unido. El alcance incluyó sistemas de soporte, bandejas y escaleras portacables, junto con los trabajos de montaje asociados.", "skip": "Ir al contenido", "slovakia": "Eslovaquia", "uk": "Reino Unido", "value1": "Enfoque profesional", "value2": "Calidad", "value3": "Eficiencia", "value4": "Cumplimiento de plazos", "writeCta": "Escríbanos", "heroHead": "Equipos\neléctricos\ny de montaje\npara la industria", "crew": "Equipo de 10 a 15 personas, ampliable", "langsOnSite": "En obra en inglés, eslovaco y polaco", "cvCta": "Envía tu CV", "copy": "Copiar", "copied": "Copiado", "rolesTitle": "A quién buscamos", "language": "Idioma", "fixField": "Completa: {field}"}, "it": {"about": "Chi siamo", "aboutText": "Siamo una giovane azienda con sede in Slovacchia che lavora a progetti industriali all’estero.", "aboutTitle": "Una guida giovane. Un approccio responsabile.", "application": "Presentati", "backTop": "Torna in alto", "belgium": "Belgio", "belgiumWork": "Lavori di montaggio in corso nell’ambito della costruzione di un data center in Belgio. Le attività attuali comprendono passerelle portacavi, strutture di supporto e posa di cavi.", "careerText": "Ti interessa lavorare su progetti industriali all’estero? Raccontaci la tua esperienza, le qualifiche e la disponibilità. Le opportunità dipendono dalle esigenze dei progetti.", "careerTitle": "Fai il prossimo passo con noi.", "careers": "Lavora con noi", "ceo": "Amministratore", "chooseRole": "Seleziona la professione", "company": "Azienda", "complete": "Completato", "contact": "Contatti", "contactTitle": "Parliamone.", "cvNote": "Per ora invia il CV via e-mail. Il pulsante apre una bozza nella tua app di posta. Allega lì il CV prima dell’invio.", "cvTitle": "Il tuo CV", "dataCentre": "Data center", "email": "E-mail", "hero": "Costruiamo il futuro.\nInsieme.", "ico": "Numero aziendale", "illustration": "Immagine illustrativa", "international": "PROGETTI INDUSTRIALI OLTRE I CONFINI", "intro": "Siamo un team giovane e flessibile che offre un’ampia gamma di servizi di montaggio e servizi tecnici per progetti industriali all’estero. Adattiamo il nostro lavoro alle esigenze di ogni progetto.", "menuLabel": "Menu", "message": "Esperienza e disponibilità", "name": "Nome e cognome", "noSubmit": "Questo modulo non invia né carica file automaticamente.", "offering1Item1": "Montaggio di passerelle e scale portacavi", "offering1Item2": "Tiro e posa di cavi", "offering1Item3": "Lavori preparatori e di montaggio correlati", "offering1Text": "Lavori di installazione elettrica e montaggio di passerelle portacavi per progetti industriali.", "offering1Title": "Installazioni elettriche e passerelle portacavi", "offering2Item1": "Montaggio di strutture metalliche", "offering2Item2": "Installazione di supporti e mensole", "offering2Item3": "Montaggio secondo i requisiti del progetto", "offering2Text": "Lavori di montaggio su strutture metalliche e relativi elementi di supporto.", "offering2Title": "Montaggio di strutture metalliche", "offering3Item1": "Lavori di montaggio industriale", "offering3Item2": "Supporto ai team di progetto in cantiere", "offering3Item3": "Ambito adattato alle esigenze del progetto", "offering3Text": "Supporto tecnico e di montaggio flessibile per progetti all’estero.", "offering3Title": "Montaggio industriale", "ongoing": "In corso", "opened": "È stata richiesta l’apertura dell’e-mail. Allega il CV e invia il messaggio. Se non si apre, scrivi all’indirizzo qui sotto.", "otherText": "Inviaci il CV anche senza esperienza in questi lavori. Valutiamo ogni candidatura individualmente e possiamo offrire formazione in base al ruolo e alle possibilità del momento.", "otherTitle": "La tua professione non è in elenco?", "paper": "Cartiera", "phone": "Telefono (facoltativo)", "profession": "Professione", "projectCta": "Parliamo del tuo progetto", "projectTitle": "Il nostro lavoro in cantiere.", "projects": "Progetti", "roles": ["Elettricista qualificato", "Aiuto elettricista", "Montatore di strutture metalliche", "Gruista", "Operatore di sollevatore telescopico (Manitou)", "Installatore di sprinkler e sistemi antincendio", "Altri lavori di montaggio", "Altra professione / interesse per la formazione"], "send": "Apri una bozza e-mail", "service1": "Montaggio industriale", "service2": "Passerelle portacavi", "service3": "Posa di cavi", "service4": "Montaggio di strutture metalliche", "service5": "Installazioni elettriche", "servicesHeading": "Supporto flessibile per l’industria.", "servicesIntro": "Dalle installazioni elettriche al montaggio di strutture. Adattiamo i servizi all’ambito concordato e alle esigenze del progetto.", "servicesTitle": "I nostri servizi", "shotton": "Montaggio di passerelle portacavi e posa di cavi presso una cartiera nel Regno Unito. L’ambito comprendeva sistemi di supporto, passerelle e scale portacavi, oltre ai lavori di montaggio correlati.", "skip": "Vai al contenuto", "slovakia": "Slovacchia", "uk": "Regno Unito", "value1": "Approccio professionale", "value2": "Qualità", "value3": "Efficienza", "value4": "Rispetto delle scadenze", "writeCta": "Scrivici", "heroHead": "Squadre\nelettriche\ne di montaggio\nper l’industria", "crew": "Squadra di 10–15 persone, ampliabile", "langsOnSite": "In cantiere in inglese, slovacco e polacco", "cvCta": "Invia il CV", "copy": "Copia", "copied": "Copiato", "rolesTitle": "Chi cerchiamo", "language": "Lingua", "fixField": "Compila: {field}"}, "pt": {"about": "Sobre nós", "aboutText": "Somos uma empresa jovem sediada na Eslováquia que trabalha em projetos industriais no estrangeiro.", "aboutTitle": "Uma direção jovem. Uma abordagem responsável.", "application": "Apresenta-te", "backTop": "Voltar ao topo", "belgium": "Bélgica", "belgiumWork": "Trabalhos de montagem em curso na construção de um centro de dados na Bélgica. O âmbito atual abrange caminhos de cabos, estruturas de suporte e instalação de cabos.", "careerText": "Queres trabalhar em projetos industriais no estrangeiro? Conta-nos a tua experiência, qualificações e disponibilidade. As oportunidades dependem das necessidades dos projetos.", "careerTitle": "Dá o próximo passo connosco.", "careers": "Trabalha connosco", "ceo": "Gerente", "chooseRole": "Seleciona a profissão", "company": "Empresa", "complete": "Concluído", "contact": "Contacto", "contactTitle": "Vamos conversar.", "cvNote": "Por agora, envia o currículo por e-mail. O botão abre um rascunho na tua aplicação de correio. Anexa aí o currículo antes de enviar.", "cvTitle": "O teu currículo", "dataCentre": "Centro de dados", "email": "E-mail", "hero": "Construímos o futuro.\nJuntos.", "ico": "Número da empresa", "illustration": "Imagem ilustrativa", "international": "PROJETOS INDUSTRIAIS ALÉM-FRONTEIRAS", "intro": "Somos uma equipa jovem e flexível que oferece uma ampla gama de serviços de montagem e serviços técnicos para projetos industriais no estrangeiro. Adaptamos o nosso trabalho às necessidades de cada projeto.", "menuLabel": "Menu", "message": "Experiência e disponibilidade", "name": "Nome completo", "noSubmit": "Este formulário não envia nem carrega ficheiros automaticamente.", "offering1Item1": "Montagem de esteiras e escadas de cabos", "offering1Item2": "Passagem e instalação de cabos", "offering1Item3": "Trabalhos de preparação e montagem associados", "offering1Text": "Trabalhos de instalação elétrica e montagem de caminhos de cabos para projetos industriais.", "offering1Title": "Instalações elétricas e caminhos de cabos", "offering2Item1": "Montagem de estruturas metálicas", "offering2Item2": "Instalação de apoios e consolas", "offering2Item3": "Montagem conforme os requisitos do projeto", "offering2Text": "Trabalhos de montagem de estruturas metálicas e dos seus elementos de suporte.", "offering2Title": "Montagem de estruturas metálicas", "offering3Item1": "Trabalhos de montagem industrial", "offering3Item2": "Apoio às equipas de projeto em obra", "offering3Item3": "Âmbito adaptado às necessidades do projeto", "offering3Text": "Apoio técnico e de montagem flexível para projetos no estrangeiro.", "offering3Title": "Montagem industrial", "ongoing": "Em curso", "opened": "Foi solicitada a abertura do e-mail. Anexa o currículo e envia a mensagem. Se não abrir, escreve para o endereço abaixo.", "otherText": "Envia o teu currículo mesmo sem experiência nestes trabalhos. Avaliamos cada candidatura individualmente e podemos oferecer formação consoante a função e as possibilidades.", "otherTitle": "A tua profissão não está na lista?", "paper": "Fábrica de papel", "phone": "Telefone (opcional)", "profession": "Profissão", "projectCta": "Falemos do seu projeto", "projectTitle": "O nosso trabalho em obra.", "projects": "Projetos", "roles": ["Eletricista qualificado", "Ajudante de eletricista", "Montador de estruturas metálicas", "Operador de grua", "Operador de manipulador telescópico (Manitou)", "Instalador de sprinklers e sistemas de proteção contra incêndios", "Outros trabalhos de montagem", "Outra profissão / interesse em formação"], "send": "Abrir rascunho de e-mail", "service1": "Montagem industrial", "service2": "Caminhos de cabos", "service3": "Instalação de cabos", "service4": "Montagem de estruturas metálicas", "service5": "Instalações elétricas", "servicesHeading": "Apoio flexível à indústria.", "servicesIntro": "Das instalações elétricas à montagem de estruturas. Adaptamos os serviços ao âmbito acordado e às necessidades do projeto.", "servicesTitle": "Os nossos serviços", "shotton": "Montagem de caminhos de cabos e instalação de cabos numa fábrica de papel no Reino Unido. O âmbito incluiu sistemas de suporte, esteiras e escadas de cabos e os trabalhos de montagem associados.", "skip": "Ir para o conteúdo", "slovakia": "Eslováquia", "uk": "Reino Unido", "value1": "Abordagem profissional", "value2": "Qualidade", "value3": "Eficiência", "value4": "Cumprimento de prazos", "writeCta": "Escreva-nos", "heroHead": "Equipas\nelétricas\ne de montagem\npara a indústria", "crew": "Equipa de 10 a 15 pessoas, expansível", "langsOnSite": "Em obra em inglês, eslovaco e polaco", "cvCta": "Envia o currículo", "copy": "Copiar", "copied": "Copiado", "rolesTitle": "Quem procuramos", "language": "Idioma", "fixField": "Preenche: {field}"}, "ro": {"about": "Despre noi", "aboutText": "Suntem o companie tânără cu sediul în Slovacia, activă în proiecte industriale în străinătate.", "aboutTitle": "Conducere tânără. O abordare responsabilă.", "application": "Prezintă-te", "backTop": "Înapoi sus", "belgium": "Belgia", "belgiumWork": "Lucrări de montaj în desfășurare în cadrul construcției unui centru de date din Belgia. Lucrările actuale includ trasee de cabluri, structuri de susținere și pozarea cablurilor.", "careerText": "Vrei să lucrezi la proiecte industriale în străinătate? Spune-ne despre experiența, calificările și disponibilitatea ta. Oportunitățile depind de nevoile proiectelor.", "careerTitle": "Fă următorul pas alături de noi.", "careers": "Lucrează cu noi", "ceo": "Administrator", "chooseRole": "Alege profesia", "company": "Companie", "complete": "Finalizat", "contact": "Contact", "contactTitle": "Hai să discutăm.", "cvNote": "Deocamdată, trimite CV-ul prin e-mail. Butonul deschide o ciornă în aplicația ta de e-mail. Atașează CV-ul acolo înainte de trimitere.", "cvTitle": "CV-ul tău", "dataCentre": "Centru de date", "email": "E-mail", "hero": "Construim viitorul.\nÎmpreună.", "ico": "Număr de identificare", "illustration": "Imagine ilustrativă", "international": "PROIECTE INDUSTRIALE DINCOLO DE GRANIȚE", "intro": "Suntem o echipă tânără și flexibilă care oferă o gamă largă de servicii de montaj și servicii tehnice pentru proiecte industriale în străinătate. Ne adaptăm munca la nevoile fiecărui proiect.", "menuLabel": "Meniu", "message": "Experiență și disponibilitate", "name": "Nume și prenume", "noSubmit": "Acest formular nu trimite și nu încarcă nimic automat.", "offering1Item1": "Montaj de jgheaburi și scări pentru cabluri", "offering1Item2": "Tragerea și pozarea cablurilor", "offering1Item3": "Lucrări de pregătire și montaj aferente", "offering1Text": "Lucrări de instalații electrice și montaj de trasee de cabluri pentru proiecte industriale.", "offering1Title": "Instalații electrice și trasee de cabluri", "offering2Item1": "Montaj de structuri metalice", "offering2Item2": "Instalarea suporturilor și consolelor", "offering2Item3": "Montaj conform cerințelor proiectului", "offering2Text": "Lucrări de montaj pentru structuri metalice și elementele lor de susținere.", "offering2Title": "Montaj de structuri metalice", "offering3Item1": "Lucrări de montaj industrial", "offering3Item2": "Sprijin pentru echipele de pe șantier", "offering3Item3": "Lucrări adaptate nevoilor proiectului", "offering3Text": "Sprijin tehnic și de montaj flexibil pentru proiecte în străinătate.", "offering3Title": "Montaj industrial", "ongoing": "În desfășurare", "opened": "S-a solicitat deschiderea e-mailului. Atașează CV-ul și trimite mesajul. Dacă nu se deschide, scrie la adresa de mai jos.", "otherText": "Trimite-ne CV-ul chiar dacă nu ai experiență în aceste activități. Evaluăm fiecare candidat individual și putem oferi instruire în funcție de post și de posibilități.", "otherTitle": "Profesia ta nu este în listă?", "paper": "Fabrică de hârtie", "phone": "Telefon (opțional)", "profession": "Profesie", "projectCta": "Să discutăm proiectul", "projectTitle": "Munca noastră pe șantier.", "projects": "Proiecte", "roles": ["Electrician calificat", "Ajutor electrician", "Montator de structuri metalice", "Macaragiu", "Operator de încărcător telescopic (Manitou)", "Montator de sprinklere și sisteme de protecție împotriva incendiilor", "Alte lucrări de montaj", "Altă profesie / interes pentru instruire"], "send": "Deschide ciorna de e-mail", "service1": "Montaj industrial", "service2": "Trasee de cabluri", "service3": "Pozare de cabluri", "service4": "Montaj de structuri metalice", "service5": "Instalații electrice", "servicesHeading": "Sprijin flexibil pentru industrie.", "servicesIntro": "De la instalații electrice la montajul structurilor. Adaptăm serviciile la lucrările convenite și la nevoile proiectului.", "servicesTitle": "Serviciile noastre", "shotton": "Montajul traseelor și pozarea cablurilor în incinta unei fabrici de hârtie din Regatul Unit. Lucrările au inclus sisteme de susținere, jgheaburi și scări pentru cabluri, precum și lucrările de montaj aferente.", "skip": "Salt la conținut", "slovakia": "Slovacia", "uk": "Regatul Unit", "value1": "Abordare profesională", "value2": "Calitate", "value3": "Eficiență", "value4": "Respectarea termenelor", "writeCta": "Scrieți-ne", "heroHead": "Echipe\nelectrice\nși de montaj\npentru industrie", "crew": "Echipă de 10–15 persoane, extensibilă", "langsOnSite": "Pe șantier în engleză, slovacă și poloneză", "cvCta": "Trimite CV-ul", "copy": "Copiază", "copied": "Copiat", "rolesTitle": "Pe cine căutăm", "language": "Limbă", "fixField": "Completează: {field}"}};
+const NAMES = {en:"English",sk:"Slovenčina",cs:"Čeština",pl:"Polski",de:"Deutsch",fr:"Français",nl:"Nederlands",es:"Español",it:"Italiano",pt:"Português",ro:"Română"};
+const ORDER = ["en","sk","cs","pl","de","fr","nl","es","it","pt","ro"];
+const $ = (s, r = document) => r.querySelector(s);
+const sel = $("#lang");
+ORDER.forEach(c => sel.add(new Option(NAMES[c], c)));
+
+function pickLang() {
+  try { const s = localStorage.getItem("xo-lang"); if (s && I18N[s]) return s; } catch (e) {}
+  const nav = (navigator.languages || [navigator.language || "en"]).map(l => l.slice(0, 2).toLowerCase());
+  return nav.find(l => I18N[l]) || "en";
+}
+
+function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+function apply(code) {
+  const t = I18N[code];
+  document.documentElement.lang = code;
+  sel.value = code;
+  document.querySelectorAll("[data-t]").forEach(n => { const v = t[n.dataset.t]; if (typeof v === "string") n.textContent = v; });
+  sel.setAttribute("aria-label", t.language);
+  const h1 = $("#h-hero"); h1.textContent = "";
+  t.heroHead.split("\n").forEach(line => h1.appendChild(el("span", null, line)));
+  const sub = $("#subline"); sub.textContent = "";
+  [t.service2, t.service4, t.service5, t.service1].forEach(s => sub.appendChild(el("li", null, s)));
+  const off = $("#offerings"); off.textContent = "";
+  [1, 2, 3].forEach(i => {
+    const row = el("article", "row");
+    const left = el("div"); left.append(el("h3", null, t["offering" + i + "Title"]), el("p", "txt", t["offering" + i + "Text"]));
+    const ul = el("ul", "items"); [1, 2, 3].forEach(j => ul.appendChild(el("li", null, t["offering" + i + "Item" + j])));
+    row.append(left, ul); off.appendChild(row);
+  });
+  const vals = $("#values"); vals.textContent = "";
+  [t.value1, t.value2, t.value3, t.value4].forEach(v => vals.appendChild(el("li", null, v)));
+  const roles = $("#roles"); roles.textContent = "";
+  t.roles.forEach(r => roles.appendChild(el("li", null, r)));
+  const prof = $("#f-prof"); const keep = prof.selectedIndex; prof.textContent = "";
+  prof.add(new Option(t.chooseRole, "")); prof.options[0].disabled = true;
+  t.roles.forEach(r => prof.add(new Option(r, r)));
+  prof.selectedIndex = keep > 0 ? keep : 0;
+  $("#menu-btn").setAttribute("aria-label", t.menuLabel);
+  document.title = "XO-SERVICES | " + t.servicesHeading.replace(/\.$/, "");
+}
+
+let current = pickLang();
+apply(current);
+sel.addEventListener("change", () => { current = sel.value; apply(current); try { localStorage.setItem("xo-lang", current); } catch (e) {} });
+
+const menuBtn = $("#menu-btn"), nav = $("#nav");
+menuBtn.addEventListener("click", () => { const open = nav.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", open); });
+nav.addEventListener("click", e => { if (e.target.closest("a")) { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); } });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && nav.classList.contains("open")) { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); menuBtn.focus(); } });
+
+document.addEventListener("click", async e => {
+  const b = e.target.closest(".copy"); if (!b) return;
+  const t = I18N[current];
+  try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = t.copied; }
+  catch (err) { const s = b.previousElementSibling; const r = document.createRange(); r.selectNodeContents(s); const w = getSelection(); w.removeAllRanges(); w.addRange(r); }
+  setTimeout(() => { b.textContent = I18N[current].copy; }, 1800);
+});
+
+$("#cv-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target, t = I18N[current], st = $("#form-status");
+  const bad = [...f.querySelectorAll("[required]")].find(x => !x.value.trim() || (x.type === "email" && !/^\S+@\S+\.\S+$/.test(x.value)));
+  f.querySelectorAll("[required]").forEach(x => x.setAttribute("aria-invalid", x === bad ? "true" : "false"));
+  if (bad) { st.textContent = t.fixField.replace("{field}", (bad.labels[0] || bad).textContent.replace("*", "").trim()); bad.focus(); return; }
+  const d = new FormData(f);
+  const subject = t.careers + ": " + d.get("profession") + " – " + d.get("name");
+  const body = [t.name + ": " + d.get("name"), t.email + ": " + d.get("email"), t.phone + ": " + (d.get("phone") || "-"),
+    t.profession + ": " + d.get("profession"), "", t.message + ":", d.get("message") || "-"].join("\n");
+  location.href = "mailto:info@xoservices.eu?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  st.textContent = t.opened;
+});
+$("#year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
