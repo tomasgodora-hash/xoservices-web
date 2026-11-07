@@ -1,0 +1,430 @@
+<title>XO-SERVICES | Electrical and assembly crews for industry</title>
+<meta name="description" content="{{metaDesc}}">
+<link rel="canonical" href="https://xoservices.eu/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="XO-SERVICES">
+<meta property="og:url" content="https://xoservices.eu/">
+<meta property="og:title" content="XO-SERVICES | Electrical and assembly crews for industry">
+<meta property="og:description" content="{{metaDesc}}">
+<meta property="og:image" content="https://xoservices.eu/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="XO-SERVICES – electrical and assembly crews for industry">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo.png">
+<link rel="preload" href="fonts/inter-900.woff" as="font" type="font/woff" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/inter-400.woff) format("woff")}
+@font-face{font-family:"Inter";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/inter-700.woff) format("woff")}
+@font-face{font-family:"Inter";font-weight:900;font-style:normal;font-display:swap;src:url(fonts/inter-900.woff) format("woff")}
+/* Layout: a recruitment poster that keeps going — huge black caps on white paper, XO watermark bleeding off the right edge,
+   thin rules between sections, and the black contact band fixed to the bottom of every screen. Single light world by choice. */
+:root{
+  --paper:#ffffff; --ink:#111111; --grey:#666666; --line:#dedede; --band:#111111; --band-ink:#ffffff; --band-div:#787878;
+  --display:"Inter","Helvetica Neue",Arial,sans-serif; --body:"Inter","Helvetica Neue",Arial,sans-serif;
+  --s1:.5rem; --s2:1rem; --s3:1.5rem; --s4:2.5rem; --s5:4rem; --s6:7rem;
+  --wrap:78rem; --band-h:3.25rem;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body);
+  padding-bottom:calc(var(--band-h) + env(safe-area-inset-bottom,0px));overflow-x:hidden}
+::selection{background:var(--ink);color:var(--paper)}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;font-family:var(--display);text-wrap:balance;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media(min-width:700px){.wrap{padding-left:max(2.5rem,env(safe-area-inset-left,0px));padding-right:max(2.5rem,env(safe-area-inset-right,0px))}}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--ink);color:var(--paper);padding:.6rem 1rem;z-index:50;font-weight:700}
+.skip:focus{top:1rem}
+.caps{font-size:.8125rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase}
+.muted{color:var(--grey)}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:var(--s3);min-height:4.5rem}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;margin-right:auto}
+.brand img{height:2.6rem;width:auto}
+.nav{display:flex;gap:var(--s3)}
+.nav a{font-weight:700;font-size:.9375rem;text-decoration:none;padding:.5rem 0;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--ink)}
+.lang{position:relative}
+.lang select{appearance:none;font:700 .875rem var(--body);color:var(--ink);background:var(--paper);border:1px solid var(--ink);
+  padding:.55rem 2rem .55rem .75rem;min-height:44px;cursor:pointer;border-radius:0}
+.lang::after{content:"";position:absolute;right:.8rem;top:50%;width:.4rem;height:.4rem;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.menu-btn{display:none;font:700 .9375rem var(--body);background:none;border:0;color:var(--ink);min-height:44px;padding:0 .25rem;cursor:pointer;align-items:center;gap:.5rem}
+.menu-btn i{display:block;width:1.4rem;height:2px;background:var(--ink);box-shadow:0 6px 0 var(--ink)}
+@media(max-width:860px){
+  .nav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--ink);flex-direction:column;gap:0;
+    padding:.5rem max(16px,env(safe-area-inset-right,0px)) 1rem max(16px,env(safe-area-inset-left,0px))}
+  .nav.open{display:flex}
+  .nav a{font-size:1.5rem;font-weight:900;padding:.6rem 0;border-bottom:1px solid var(--line)}
+  .menu-btn{display:inline-flex}
+}
+@media(max-width:420px){.brand img{height:2.2rem}.top .wrap{gap:.75rem}}
+
+/* hero poster */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{position:relative;padding-block:var(--s5) var(--s5)}
+.wm{position:absolute;pointer-events:none;user-select:none;opacity:.065;width:min(62rem,120vw);right:-14vw;top:-2rem;z-index:0}
+.hero-grid{position:relative;z-index:1;display:grid;gap:var(--s4)}
+.hero h1{font-weight:900;text-transform:uppercase;font-size:clamp(2.6rem,7.6vw,5.5rem);line-height:.95;letter-spacing:-.04em;max-width:14ch;white-space:pre-line}
+.hero h1 span{display:block}
+.subline{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin:var(--s3) 0 0;padding:0}
+.subline li{list-style:none}
+.subline li+li::before{content:"•";margin-right:1rem}
+.label{display:inline-block;background:var(--ink);color:var(--paper);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:.9375rem;padding:.55rem .9rem}
+.hero-intro{max-width:36rem;font-size:1.1875rem;line-height:1.55}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.75rem;min-height:3.25rem;padding:.8rem 1.4rem;font:700 1rem var(--body);text-decoration:none;border:2px solid var(--ink);cursor:pointer;border-radius:0;transition:background .15s,color .15s}
+.btn-solid{background:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--paper);color:var(--ink)}
+.btn-line{background:var(--paper);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:1.05rem;height:1.05rem;flex:none}
+.facts{display:grid;gap:.35rem;padding-left:1.1rem;position:relative;font-weight:400}
+.facts::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:5px;background:var(--ink)}
+@media(min-width:900px){
+  .hero .wrap{padding-block:var(--s5) var(--s5)}
+  .hero-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:end;column-gap:var(--s5)}
+  .hero-head{grid-column:1/-1}
+}
+@media(prefers-reduced-motion:no-preference){
+  .hero h1 span{animation:rise .7s cubic-bezier(.16,1,.3,1) both}
+  .hero h1 span:nth-child(2){animation-delay:.08s}
+  .hero h1 span:nth-child(3){animation-delay:.16s}
+  .hero h1 span:nth-child(4){animation-delay:.24s}
+  @keyframes rise{from{transform:translateY(.35em);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(-40% -10% -40% -10%)}}
+}
+
+/* sections */
+section{scroll-margin-top:5rem}
+.sec{padding-block:var(--s5);border-bottom:1px solid var(--line)}
+@media(min-width:900px){.sec{padding-block:var(--s6)}}
+.sec-head{display:grid;gap:var(--s2);margin-bottom:var(--s4);max-width:52rem}
+.sec h2{font-weight:900;text-transform:uppercase;font-size:clamp(2rem,5.2vw,4rem);line-height:.95;letter-spacing:-.035em;white-space:pre-line}
+.lead{font-size:1.125rem;max-width:40rem}
+.rows{border-top:2px solid var(--ink)}
+.row{display:grid;gap:var(--s2) var(--s5);padding-block:var(--s4);border-bottom:1px solid var(--line)}
+@media(min-width:800px){.row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.row h3{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:700;line-height:1.1;letter-spacing:-.02em}
+.row .txt{margin-top:.6rem;max-width:34rem}
+.items{list-style:none;margin:0;padding:0;align-self:start}
+.items li{padding:.7rem 0;border-bottom:1px solid var(--line);font-weight:400;display:flex;gap:.8rem;align-items:baseline}
+.items li:first-child{padding-top:0}
+.items li::before{content:"";flex:none;width:.55rem;height:.55rem;background:var(--ink);transform:translateY(-.1rem)}
+
+/* about */
+.about .wrap{display:grid;gap:var(--s3)}
+@media(min-width:900px){.about .wrap{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:end;column-gap:var(--s5)}}
+.values{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin:0;padding:0}
+.values li{list-style:none}
+.values li+li::before{content:"•";margin-right:1rem}
+
+/* projects */
+.proj .meta{display:grid;gap:.6rem;align-content:start}
+.status{justify-self:start;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .6rem;border:1.5px solid var(--ink)}
+.status.on{background:var(--ink);color:var(--paper)}
+
+/* careers */
+.roles{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink);display:grid}
+@media(min-width:800px){.roles{grid-template-columns:1fr 1fr;column-gap:var(--s5)}}
+.roles li{padding:.95rem 0;border-bottom:1px solid var(--line);font-size:clamp(1.125rem,1.8vw,1.375rem);font-weight:700;line-height:1.3}
+.other{display:grid;gap:.5rem;margin-block:var(--s4);padding-left:1.1rem;position:relative;max-width:44rem}
+.other::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:5px;background:var(--ink)}
+.other h3{font-size:1.25rem;font-weight:700}
+.apply{display:grid;gap:var(--s4);margin-top:var(--s5)}
+@media(min-width:900px){.apply{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);column-gap:var(--s5)}}
+.apply h3{font-size:clamp(1.75rem,3.4vw,2.6rem);font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:1}
+form{display:grid;gap:var(--s3)}
+.f2{display:grid;gap:var(--s3)}
+@media(min-width:640px){.f2{grid-template-columns:1fr 1fr}}
+.field{display:grid;gap:.35rem;min-width:0}
+.field label{font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grey)}
+.field input,.field select,.field textarea{font:400 1.0625rem var(--body);color:var(--ink);background:var(--paper);border:0;border-bottom:2px solid var(--ink);border-radius:0;padding:.6rem 0;min-height:44px;width:100%}
+.field select{appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 12px) 55%,calc(100% - 6px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:1.5rem}
+.field textarea{min-height:7rem;resize:vertical;border:2px solid var(--ink);padding:.7rem}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;box-shadow:0 2px 0 0 var(--ink)}
+.field input::placeholder,.field textarea::placeholder{color:var(--grey)}
+.field .req{color:var(--ink)}
+.note{font-size:.9375rem;color:var(--grey);max-width:38rem}
+#form-status{font-weight:700;min-height:1.5em}
+.copyline{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem}
+.copyline strong{font-size:1.125rem;user-select:all}
+.copyline a{display:inline-flex;align-items:center;min-height:44px}
+.foot a{display:inline-flex;align-items:center;min-height:44px}
+.legal{font-size:.875rem;color:var(--grey);max-width:40rem}
+@media(max-height:500px){.band{position:static}body{padding-bottom:0}}
+.copy{font:700 .75rem var(--body);letter-spacing:.14em;text-transform:uppercase;background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);padding:.45rem .7rem;min-height:36px;cursor:pointer;border-radius:0}
+.copy:hover{background:var(--ink);color:var(--paper)}
+
+/* contact */
+.contact h2{font-size:clamp(2.6rem,8vw,6rem);line-height:.9}
+.cgrid{display:grid;gap:var(--s4);border-top:2px solid var(--ink);padding-top:var(--s4)}
+@media(min-width:800px){.cgrid{grid-template-columns:1fr 1fr;column-gap:var(--s5)}}
+.cblock{display:grid;gap:.5rem;align-content:start}
+.cblock h3{font-size:1.75rem;font-weight:700;letter-spacing:-.02em}
+address{font-style:normal}
+
+/* footer + fixed band */
+.foot{padding-block:var(--s4) var(--s5)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2);font-size:.875rem;color:var(--grey)}
+.foot a{font-weight:700;color:var(--ink)}
+.band{position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--band);color:var(--band-ink);padding-bottom:env(safe-area-inset-bottom,0px)}
+.band .wrap{display:flex;align-items:center;min-height:var(--band-h);gap:0;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+.band .wrap::-webkit-scrollbar{display:none}
+.band a,.band span{color:var(--band-ink);font-weight:700;font-size:.875rem;text-decoration:none;padding:.4rem 0}
+.band a:hover{text-decoration:underline}
+.band .div{width:1px;height:1.1rem;background:var(--band-div);margin-inline:1rem;flex:none;padding:0}
+.band .bname{display:flex;align-items:center;gap:.6rem;font-weight:900;letter-spacing:.04em}
+.band .bname::before{content:"";width:4px;height:1.1rem;background:var(--band-ink)}
+.band :focus-visible{outline-color:var(--band-ink)}
+@media(max-width:640px){.band .hide-s{display:none}}
+</style>
+
+<a class="skip" href="#main" data-t="skip">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#main" aria-label="XO-SERVICES"><img src="logo.png" alt="XO-SERVICES" width="598" height="375"></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#services" data-t="servicesTitle">Our services</a>
+      <a href="#projects" data-t="projects">Projects</a>
+      <a href="#careers" data-t="careers">Careers</a>
+      <a href="#contact" data-t="contact">Contact</a>
+    </nav>
+    <div class="lang">
+      <label for="lang" class="sr" data-t="language" hidden>Language</label>
+      <select id="lang" aria-label="Language"></select>
+    </div>
+    <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav"><span data-t="menuLabel">Menu</span><i aria-hidden="true"></i></button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <section class="hero" aria-labelledby="h-hero">
+    <img class="wm" src="logo.png" alt="" aria-hidden="true">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-head">
+          <h1 id="h-hero"></h1>
+          <ul class="subline caps" id="subline"></ul>
+        </div>
+        <div style="display:grid;gap:var(--s3)">
+          <p><span class="label">VCA • VOL-VCA • IPAF</span></p>
+          <p class="hero-intro" data-t="intro"></p>
+          <div class="ctas">
+            <a class="btn btn-solid" href="#contact"><span data-t="projectCta"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+            <a class="btn btn-line" href="#apply"><span data-t="cvCta"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
+          </div>
+        </div>
+        <ul class="facts" style="list-style:none;margin:0">
+          <li data-t="crew"></li>
+          <li data-t="langsOnSite"></li>
+          <li>Košice, <span data-t="slovakia"></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="services" aria-labelledby="h-services">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="h-services" data-t="servicesHeading"></h2>
+        <p class="lead" data-t="servicesIntro"></p>
+      </div>
+      <div class="rows" id="offerings"></div>
+    </div>
+  </section>
+
+  <section class="sec about" id="about" aria-labelledby="h-about">
+    <div class="wrap">
+      <h2 id="h-about" data-t="aboutTitle"></h2>
+      <div style="display:grid;gap:var(--s2)">
+        <p class="lead" data-t="aboutText"></p>
+        <ul class="values caps" id="values"></ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="projects" aria-labelledby="h-projects">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-projects" data-t="projectTitle"></h2></div>
+      <div class="rows">
+        <article class="row proj">
+          <div class="meta">
+            <span class="status on" data-t="ongoing"></span>
+            <p class="caps muted" data-t="belgium"></p>
+            <h3 data-t="dataCentre"></h3>
+          </div>
+          <p class="txt" data-t="belgiumWork"></p>
+        </article>
+        <article class="row proj">
+          <div class="meta">
+            <span class="status" data-t="complete"></span>
+            <p class="caps muted" data-t="uk"></p>
+            <h3 data-t="paper"></h3>
+          </div>
+          <p class="txt" data-t="paperWork"></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="careers" aria-labelledby="h-careers">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="h-careers" data-t="careerTitle"></h2>
+        <p class="lead" data-t="careerText"></p>
+      </div>
+      <h3 class="caps" style="margin-bottom:var(--s2)" data-t="rolesTitle"></h3>
+      <ul class="roles" id="roles"></ul>
+      <div class="other">
+        <h3 data-t="otherTitle"></h3>
+        <p data-t="otherText"></p>
+      </div>
+      <div class="apply" id="apply">
+        <div style="display:grid;gap:var(--s2);align-content:start">
+          <h3 data-t="application"></h3>
+          <p class="note" data-t="cvNote"></p>
+          <div class="copyline"><strong>info@xoservices.eu</strong><button type="button" class="copy" data-copy="info@xoservices.eu" data-t="copy"></button></div>
+        </div>
+        <form id="cv-form" novalidate>
+          <div class="f2">
+            <div class="field"><label for="f-name"><span data-t="name"></span> <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="f-email"><span data-t="email"></span> <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="f2">
+            <div class="field"><label for="f-phone" data-t="phone"></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-prof"><span data-t="profession"></span> <span class="req" aria-hidden="true">*</span></label><select id="f-prof" name="profession" required></select></div>
+          </div>
+          <div class="field"><label for="f-msg" data-t="message"></label><textarea id="f-msg" name="message"></textarea></div>
+          <div class="ctas" style="align-items:center"><button class="btn btn-solid" type="submit"><span data-t="send"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
+          <p id="form-status" role="status" aria-live="polite"></p>
+          <p class="note"><span data-t="formPrivacy"></span> <a href="privacy.html" data-t="privacy"></a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-contact" data-t="contactTitle"></h2></div>
+      <div class="cgrid">
+        <div class="cblock">
+          <p class="caps muted" data-t="company"></p>
+          <h3>XO-SERVICES s. r. o.</h3>
+          <address>Jenisejská 45A<br>040 12 Košice<br><span data-t="slovakia"></span></address>
+          <p><span data-t="ico"></span>: 57 302 880</p>
+          <p data-t="taxIds"></p>
+          <p class="legal" data-t="registry"></p>
+        </div>
+        <div class="cblock">
+          <p class="caps muted" data-t="ceo"></p>
+          <h3>Tomáš Godora</h3>
+          <div class="copyline"><strong><a href="tel:+421908975983">+421 908 975 983</a></strong><button type="button" class="copy" data-copy="+421 908 975 983" data-t="copy"></button></div>
+          <div class="copyline"><strong><a href="mailto:info@xoservices.eu">info@xoservices.eu</a></strong><button type="button" class="copy" data-copy="info@xoservices.eu" data-t="copy"></button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> XO-SERVICES s. r. o. · <span data-t="ico"></span> 57 302 880</span>
+    <a href="privacy.html" data-t="privacy">Privacy notice</a>
+    <a href="#main" data-t="backTop">Back to top</a>
+  </div>
+</footer>
+
+<div class="band" role="complementary" aria-label="Kontakt XO-SERVICES">
+  <div class="wrap">
+    <span class="bname hide-s">XO-SERVICES</span><span class="div hide-s" aria-hidden="true"></span>
+    <a href="mailto:info@xoservices.eu">info@xoservices.eu</a><span class="div" aria-hidden="true"></span>
+    <a href="tel:+421908975983">+421 908 975 983</a><span class="div hide-s" aria-hidden="true"></span>
+    <span class="hide-s">xoservices.eu</span>
+  </div>
+</div>
+
+<script>
+const I18N = /*__I18N__*/null;
+const NAMES = {en:"English",sk:"Slovenčina",cs:"Čeština",pl:"Polski",de:"Deutsch",fr:"Français",nl:"Nederlands",es:"Español",it:"Italiano",pt:"Português",ro:"Română"};
+const ORDER = ["en","sk","cs","pl","de","fr","nl","es","it","pt","ro"];
+const $ = (s, r = document) => r.querySelector(s);
+const sel = $("#lang");
+ORDER.forEach(c => sel.add(new Option(NAMES[c], c)));
+
+function pickLang() {
+  try { const s = localStorage.getItem("xo-lang"); if (s && I18N[s]) return s; } catch (e) {}
+  const nav = (navigator.languages || [navigator.language || "en"]).map(l => l.slice(0, 2).toLowerCase());
+  return nav.find(l => I18N[l]) || "en";
+}
+
+function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+function apply(code) {
+  const t = I18N[code];
+  document.documentElement.lang = code;
+  sel.value = code;
+  document.querySelectorAll("[data-t]").forEach(n => { const v = t[n.dataset.t]; if (typeof v === "string") n.textContent = v; });
+  sel.setAttribute("aria-label", t.language);
+  const h1 = $("#h-hero"); h1.textContent = "";
+  t.heroHead.split("\n").forEach((line, i, a) => { h1.appendChild(el("span", null, line)); if (i < a.length - 1) h1.appendChild(document.createTextNode(" ")); });
+  const md = document.querySelector('meta[name="description"]'); if (md) md.setAttribute("content", t.metaDesc);
+  const sub = $("#subline"); sub.textContent = "";
+  [t.service2, t.service4, t.service5, t.service1].forEach(s => sub.appendChild(el("li", null, s)));
+  const off = $("#offerings"); off.textContent = "";
+  [1, 2, 3].forEach(i => {
+    const row = el("article", "row");
+    const left = el("div"); left.append(el("h3", null, t["offering" + i + "Title"]), el("p", "txt", t["offering" + i + "Text"]));
+    const ul = el("ul", "items"); [1, 2, 3].forEach(j => ul.appendChild(el("li", null, t["offering" + i + "Item" + j])));
+    row.append(left, ul); off.appendChild(row);
+  });
+  const vals = $("#values"); vals.textContent = "";
+  [t.value1, t.value2, t.value3, t.value4].forEach(v => vals.appendChild(el("li", null, v)));
+  const roles = $("#roles"); roles.textContent = "";
+  t.roles.forEach(r => roles.appendChild(el("li", null, r)));
+  const prof = $("#f-prof"); const keep = prof.selectedIndex; prof.textContent = "";
+  prof.add(new Option(t.chooseRole, "")); prof.options[0].disabled = true;
+  t.roles.forEach(r => prof.add(new Option(r, r)));
+  prof.selectedIndex = keep > 0 ? keep : 0;
+  $("#menu-btn").setAttribute("aria-label", t.menuLabel);
+  document.title = "XO-SERVICES | " + t.servicesHeading.replace(/\.$/, "");
+}
+
+let current = pickLang();
+apply(current);
+sel.addEventListener("change", () => { current = sel.value; apply(current); try { localStorage.setItem("xo-lang", current); } catch (e) {} });
+
+const menuBtn = $("#menu-btn"), nav = $("#nav");
+menuBtn.addEventListener("click", () => { const open = nav.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", open); });
+nav.addEventListener("click", e => { if (e.target.closest("a")) { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); } });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && nav.classList.contains("open")) { nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); menuBtn.focus(); } });
+
+document.addEventListener("click", async e => {
+  const b = e.target.closest(".copy"); if (!b) return;
+  const t = I18N[current];
+  try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = t.copied; }
+  catch (err) { const s = b.previousElementSibling; const r = document.createRange(); r.selectNodeContents(s); const w = getSelection(); w.removeAllRanges(); w.addRange(r); }
+  setTimeout(() => { b.textContent = I18N[current].copy; }, 1800);
+});
+
+$("#cv-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = e.target, t = I18N[current], st = $("#form-status");
+  const bad = [...f.querySelectorAll("[required]")].find(x => !x.value.trim() || (x.type === "email" && !/^\S+@\S+\.\S+$/.test(x.value)));
+  f.querySelectorAll("[required]").forEach(x => { x.setAttribute("aria-invalid", x === bad ? "true" : "false"); if (x === bad) x.setAttribute("aria-describedby", "form-status"); else x.removeAttribute("aria-describedby"); });
+  if (bad) { st.textContent = t.fixField.replace("{field}", (bad.labels[0] || bad).textContent.replace("*", "").trim()); bad.focus(); return; }
+  const d = new FormData(f);
+  const subject = t.careers + ": " + d.get("profession") + " – " + d.get("name");
+  const body = [t.name + ": " + d.get("name"), t.email + ": " + d.get("email"), t.phone + ": " + (d.get("phone") || "-"),
+    t.profession + ": " + d.get("profession"), "", t.message + ":", d.get("message") || "-"].join("\n");
+  location.href = "mailto:info@xoservices.eu?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  st.textContent = t.opened;
+});
+$("#year").textContent = new Date().getFullYear();
+</script>
