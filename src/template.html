@@ -54,7 +54,7 @@ p{margin:0}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:var(--s3);min-height:4.5rem}
-.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;margin-right:auto}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;margin-right:auto;min-height:44px}
 .brand img{height:2.6rem;width:auto}
 .nav{display:flex;gap:var(--s3)}
 .nav a{font-weight:700;font-size:.9375rem;text-decoration:none;padding:.5rem 0;border-bottom:2px solid transparent}
@@ -101,6 +101,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn svg{width:1.05rem;height:1.05rem;flex:none}
 .facts{display:grid;gap:.4rem;line-height:1.45;padding-left:1.1rem;position:relative;font-weight:400}
 .facts::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:5px;background:var(--ink)}
+@media(max-width:699px){.subline{display:none}.hero .wrap{padding-block:var(--s4) var(--s4)}.hero-grid{gap:var(--s3)}}
 @media(min-width:900px){
   .hero .wrap{padding-block:var(--s5) var(--s5)}
   .hero-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:end;column-gap:var(--s5)}
@@ -139,6 +140,8 @@ section{scroll-margin-top:5rem}
 
 /* projects */
 .proj .meta{display:grid;gap:.6rem;align-content:start}
+.pmeta{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem}
+.proj .txt{color:var(--ink)}
 .status{justify-self:start;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:.35rem .6rem;border:1.5px solid var(--ink)}
 .status.on{background:var(--ink);color:var(--paper)}
 
@@ -163,8 +166,17 @@ form{display:grid;gap:var(--s3)}
 .field input:focus,.field select:focus,.field textarea:focus{outline:none;box-shadow:0 2px 0 0 var(--ink)}
 .field input::placeholder,.field textarea::placeholder{color:var(--grey)}
 .field .req{color:var(--ink)}
+.field [aria-invalid="true"]{border-bottom-width:4px}
+.field textarea[aria-invalid="true"]{border-width:4px}
+.err{font-size:.875rem;font-weight:700;line-height:1.35;min-height:0}
+.err:empty{display:none}
+.err::before{content:"";display:inline-block;width:.5rem;height:.5rem;background:var(--ink);margin-right:.5rem;transform:translateY(-.1rem)}
+#form-status:empty{display:none}
+#form-status{padding-left:1.1rem;position:relative}
+#form-status::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:5px;background:var(--ink)}
 .note{font-size:.9375rem;color:var(--grey);max-width:38rem}
-#form-status{font-weight:700;min-height:1.5em}
+.note a{display:inline-block;padding-block:.75rem;margin-block:-.75rem;color:var(--ink)}
+#form-status{font-weight:700}
 .copyline{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem}
 .copyline strong{font-size:1.125rem;user-select:all}
 .copyline a{display:inline-flex;align-items:center;min-height:44px}
@@ -192,6 +204,7 @@ address{font-style:normal}
 .band .wrap{display:flex;align-items:center;min-height:var(--band-h);gap:0;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
 .band .wrap::-webkit-scrollbar{display:none}
 .band a,.band span{color:var(--band-ink);font-weight:700;font-size:.875rem;text-decoration:none;padding:.4rem 0}
+.band a{display:inline-flex;align-items:center;min-height:44px}
 .band a:hover{text-decoration:underline}
 .band .div{width:1px;height:1.1rem;background:var(--band-div);margin-inline:1rem;flex:none;padding:0}
 .band .bname{display:flex;align-items:center;gap:.6rem;font-weight:900;letter-spacing:.04em}
@@ -226,12 +239,12 @@ address{font-style:normal}
 <a class="skip" href="#main" data-t="skip">Skip to content</a>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#main" aria-label="XO-SERVICES"><img src="logo.png" alt="XO-SERVICES" width="598" height="375"></a>
+    <a class="brand" href="#main" aria-label="XO-SERVICES"><img src="logo-sm.png" alt="XO-SERVICES" width="180" height="113"></a>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#services" data-t="servicesTitle">Our services</a>
       <a href="#projects" data-t="projects">Projects</a>
-      <a href="#careers" data-t="careers">Careers</a>
       <a href="#contact" data-t="contact">Contact</a>
+      <a href="#careers" data-t="careers">Careers</a>
     </nav>
     <div class="lang">
       <label for="lang" class="sr" data-t="language" hidden>Language</label>
@@ -293,17 +306,15 @@ address{font-style:normal}
       <div class="rows">
         <article class="row proj">
           <div class="meta">
-            <span class="status on" data-t="ongoing"></span>
-            <p class="caps muted" data-t="belgium"></p>
             <h3 data-t="dataCentre"></h3>
+            <p class="pmeta"><span class="status on" data-t="ongoing"></span><span class="caps" data-t="belgium"></span></p>
           </div>
           <p class="txt" data-t="belgiumWork"></p>
         </article>
         <article class="row proj">
           <div class="meta">
-            <span class="status" data-t="complete"></span>
-            <p class="caps muted" data-t="uk"></p>
             <h3 data-t="paper"></h3>
+            <p class="pmeta"><span class="status" data-t="complete"></span><span class="caps" data-t="uk"></span></p>
           </div>
           <p class="txt" data-t="paperWork"></p>
         </article>
@@ -311,6 +322,26 @@ address{font-style:normal}
     </div>
   </section>
 
+  <section class="sec contact" id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-contact" data-t="contactTitle"></h2></div>
+      <div class="cgrid">
+        <div class="cblock">
+          <h3>XO-SERVICES s. r. o.</h3>
+          <address>Jenisejská 45A<br>040 12 Košice<br><span data-t="slovakia"></span></address>
+          <p><span data-t="ico"></span>: 57 302 880</p>
+          <p data-t="taxIds"></p>
+          <p class="legal" data-t="registry"></p>
+        </div>
+        <div class="cblock">
+          <h3>Tomáš Godora</h3>
+          <p class="muted" data-t="ceo"></p>
+          <div class="copyline"><strong><a href="tel:+421908975983">+421 908 975 983</a></strong><button type="button" class="copy" data-copy="+421 908 975 983" data-t="copy"></button></div>
+          <div class="copyline"><strong><a href="mailto:info@xoservices.eu">info@xoservices.eu</a></strong><button type="button" class="copy" data-copy="info@xoservices.eu" data-t="copy"></button></div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="sec" id="careers" aria-labelledby="h-careers">
     <div class="wrap">
       <div class="sec-head">
@@ -327,47 +358,27 @@ address{font-style:normal}
         <div style="display:grid;gap:var(--s2);align-content:start">
           <h3 data-t="application"></h3>
           <p class="note" data-t="cvNote"></p>
+          <div class="ctas"><a class="btn btn-line" id="wa" href="https://wa.me/421908975983" target="_blank" rel="noopener"><span data-t="waCta"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2.5 3.5h11v7.5H7l-3.5 2.5V11h-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a></div>
           <div class="copyline"><strong>info@xoservices.eu</strong><button type="button" class="copy" data-copy="info@xoservices.eu" data-t="copy"></button></div>
         </div>
         <form id="cv-form" novalidate>
           <div class="f2">
-            <div class="field"><label for="f-name"><span data-t="name"></span> <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required></div>
-            <div class="field"><label for="f-email"><span data-t="email"></span> <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="f-name"><span data-t="name"></span> <span class="req" aria-hidden="true">*</span></label><input id="f-name" name="name" autocomplete="name" required><p class="err" id="e-name"></p></div>
+            <div class="field"><label for="f-email"><span data-t="email"></span> <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required><p class="err" id="e-email"></p></div>
           </div>
           <div class="f2">
             <div class="field"><label for="f-phone" data-t="phone"></label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-            <div class="field"><label for="f-prof"><span data-t="profession"></span> <span class="req" aria-hidden="true">*</span></label><select id="f-prof" name="profession" required></select></div>
+            <div class="field"><label for="f-prof"><span data-t="profession"></span> <span class="req" aria-hidden="true">*</span></label><select id="f-prof" name="profession" required></select><p class="err" id="e-prof"></p></div>
           </div>
           <div class="field"><label for="f-msg" data-t="message"></label><textarea id="f-msg" name="message"></textarea></div>
-          <div class="ctas" style="align-items:center"><button class="btn btn-solid" type="submit"><span data-t="send"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
           <p id="form-status" role="status" aria-live="polite"></p>
+          <div class="ctas" style="align-items:center"><button class="btn btn-solid" type="submit"><span data-t="send"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
           <p class="note"><span data-t="formPrivacy"></span> <a href="privacy.html" data-t="privacy"></a></p>
         </form>
       </div>
     </div>
   </section>
 
-  <section class="sec contact" id="contact" aria-labelledby="h-contact">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="h-contact" data-t="contactTitle"></h2></div>
-      <div class="cgrid">
-        <div class="cblock">
-          <p class="caps muted" data-t="company"></p>
-          <h3>XO-SERVICES s. r. o.</h3>
-          <address>Jenisejská 45A<br>040 12 Košice<br><span data-t="slovakia"></span></address>
-          <p><span data-t="ico"></span>: 57 302 880</p>
-          <p data-t="taxIds"></p>
-          <p class="legal" data-t="registry"></p>
-        </div>
-        <div class="cblock">
-          <p class="caps muted" data-t="ceo"></p>
-          <h3>Tomáš Godora</h3>
-          <div class="copyline"><strong><a href="tel:+421908975983">+421 908 975 983</a></strong><button type="button" class="copy" data-copy="+421 908 975 983" data-t="copy"></button></div>
-          <div class="copyline"><strong><a href="mailto:info@xoservices.eu">info@xoservices.eu</a></strong><button type="button" class="copy" data-copy="info@xoservices.eu" data-t="copy"></button></div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="foot">
@@ -430,7 +441,10 @@ function apply(code) {
   t.roles.forEach(r => prof.add(new Option(r, r)));
   prof.selectedIndex = keep > 0 ? keep : 0;
   $("#menu-btn").setAttribute("aria-label", t.menuLabel);
-  document.title = "XO-SERVICES | " + t.servicesHeading.replace(/\.$/, "");
+  document.title = "XO-SERVICES | " + t.heroHead.replace(/-\n/g, "-").replace(/\n/g, " ").replace(/^./, c => c.toUpperCase());
+  $("#wa").href = "https://wa.me/421908975983?text=" + encodeURIComponent(t.waText);
+  document.querySelectorAll('#cv-form [aria-invalid="true"]').forEach(x => checkField(x, t));
+  if ($("#form-status").textContent) $("#form-status").textContent = t.fixField;
   fitHeads();
 }
 function fitHeads() {
@@ -469,12 +483,23 @@ document.addEventListener("click", async e => {
   setTimeout(() => { b.textContent = I18N[current].copy; b.classList.remove("done"); }, 1800);
 });
 
+function checkField(x, t) {
+  const v = x.value.trim();
+  const msg = !v ? t.errRequired : (x.type === "email" && !/^\S+@\S+\.\S+$/.test(v)) ? t.errEmail : "";
+  const e = $("#e-" + x.id.slice(2));
+  x.setAttribute("aria-invalid", msg ? "true" : "false");
+  if (msg) x.setAttribute("aria-describedby", e.id); else x.removeAttribute("aria-describedby");
+  e.textContent = msg;
+  return !msg;
+}
+$("#cv-form").addEventListener("input", e => { const x = e.target; if (x.getAttribute("aria-invalid") === "true") checkField(x, I18N[current]); });
+$("#cv-form").addEventListener("change", e => { const x = e.target; if (x.getAttribute("aria-invalid") === "true") checkField(x, I18N[current]); });
 $("#cv-form").addEventListener("submit", e => {
   e.preventDefault();
   const f = e.target, t = I18N[current], st = $("#form-status");
-  const bad = [...f.querySelectorAll("[required]")].find(x => !x.value.trim() || (x.type === "email" && !/^\S+@\S+\.\S+$/.test(x.value)));
-  f.querySelectorAll("[required]").forEach(x => { x.setAttribute("aria-invalid", x === bad ? "true" : "false"); if (x === bad) x.setAttribute("aria-describedby", "form-status"); else x.removeAttribute("aria-describedby"); });
-  if (bad) { st.textContent = t.fixField.replace("{field}", (bad.labels[0] || bad).textContent.replace("*", "").trim()); bad.focus(); return; }
+  const bad = [...f.querySelectorAll("[required]")].filter(x => !checkField(x, t));
+  if (bad.length) { st.textContent = t.fixField; bad[0].focus({ preventScroll: true }); bad[0].scrollIntoView({ block: "center", behavior: "smooth" }); return; }
+  st.textContent = "";
   const d = new FormData(f);
   const subject = t.careers + ": " + d.get("profession") + " – " + d.get("name");
   const body = [t.name + ": " + d.get("name"), t.email + ": " + d.get("email"), t.phone + ": " + (d.get("phone") || "-"),
