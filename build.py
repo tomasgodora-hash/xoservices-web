@@ -57,7 +57,7 @@ def prerender(s, t):
         f'<ul class="items">' + "".join(f"<li>{esc(t[f'offering{i}Item{j}'])}</li>" for j in (1, 2, 3)) + "</ul></article>"
         for i in (1, 2, 3))
     s = s.replace('<div class="rows" id="offerings"></div>', f'<div class="rows" id="offerings">{rows}</div>')
-    pics = [("img/trays.jpg", "50% 50%"), ("img/frames.jpg", "50% 60%"), ("img/crane.jpg", "50% 88%")]
+    pics = [("img/cables.jpg", "35% 40%"), ("img/frames.jpg", "50% 60%"), ("img/crane.jpg", "50% 88%")]
     tiles = "".join(
         f'<article class="tile"><figure><img src="{pics[i-1][0]}" alt="" loading="lazy" style="object-position:{pics[i-1][1]}"></figure>'
         f'<h3>{esc(t[f"offering{i}Title"])}</h3><p>{esc(t[f"offering{i}Text"])}</p>'
