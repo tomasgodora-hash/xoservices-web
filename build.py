@@ -57,13 +57,25 @@ def prerender(s, t):
         f'<ul class="items">' + "".join(f"<li>{esc(t[f'offering{i}Item{j}'])}</li>" for j in (1, 2, 3)) + "</ul></article>"
         for i in (1, 2, 3))
     s = s.replace('<div class="rows" id="offerings"></div>', f'<div class="rows" id="offerings">{rows}</div>')
+    pics = [("img/trays.jpg", "50% 50%"), ("img/frames.jpg", "50% 60%"), ("img/crane.jpg", "50% 88%")]
+    tiles = "".join(
+        f'<article class="tile"><figure><img src="{pics[i-1][0]}" alt="" loading="lazy" style="object-position:{pics[i-1][1]}"></figure>'
+        f'<h3>{esc(t[f"offering{i}Title"])}</h3><p>{esc(t[f"offering{i}Text"])}</p>'
+        f'<ul class="items">' + "".join(f"<li>{esc(t[f'offering{i}Item{j}'])}</li>" for j in (1, 2, 3)) + "</ul></article>"
+        for i in (1, 2, 3))
+    s = s.replace('<div class="tiles" id="offerings"></div>', f'<div class="tiles" id="offerings">{tiles}</div>')
     s = s.replace('<ul class="values caps" id="values"></ul>', '<ul class="values caps" id="values">' + "".join(f"<li>{esc(t[f'value{i}'])}</li>" for i in (1, 2, 3, 4)) + "</ul>")
     s = s.replace('<ul class="roles" id="roles"></ul>', '<ul class="roles" id="roles">' + "".join(f"<li>{esc(r)}</li>" for r in t["roles"]) + "</ul>")
     return s.replace("{{metaDesc}}", html.escape(t["metaDesc"]))
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser(description="Zostaví web zo šablóny a prekladov.")
+    ap.add_argument("--template", default="src/template.html", help="šablóna (predvolene src/template.html)")
+    ap.add_argument("--out", default="index.html", help="výstupný súbor (predvolene index.html)")
+    args = ap.parse_args()
     tr = load()
-    tpl = (ROOT / "src" / "template.html").read_text("utf-8")
+    tpl = (ROOT / args.template).read_text("utf-8")
     for code, d in tr.items(): check_banned(json.dumps(d, ensure_ascii=False), f"{code}.json")
     check_banned(tpl, "template.html")
     out = prerender(tpl, tr[DEFAULT])
@@ -73,8 +85,8 @@ def main():
             '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n')
     i = out.index("</style>") + len("</style>")
     page += out[:i] + "\n</head>\n<body>\n" + out[i:] + "\n</body>\n</html>\n"
-    (ROOT / "index.html").write_text(page, "utf-8")
-    print(f"build: index.html hotový ({len(page)//1024} kB, {len(tr)} jazykov, {len(tr[DEFAULT])} kľúčov)")
+    (ROOT / args.out).write_text(page, "utf-8")
+    print(f"build: {args.out} hotový ({len(page)//1024} kB, {len(tr)} jazykov, {len(tr[DEFAULT])} kľúčov)")
 
 if __name__ == "__main__":
     main()
