@@ -1,22 +1,25 @@
-<title>XO-SERVICES | Electrical and assembly crews for industry</title>
+<title>{{title}}</title>
 <meta name="description" content="{{metaDesc}}">
-<link rel="canonical" href="https://xoservices.eu/">
+<link rel="canonical" href="{{url}}">
+{{hreflang}}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="XO-SERVICES">
-<meta property="og:url" content="https://xoservices.eu/">
-<meta property="og:title" content="XO-SERVICES | Electrical and assembly crews for industry">
+<meta property="og:locale" content="{{ogLocale}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:title" content="{{title}}">
 <meta property="og:description" content="{{metaDesc}}">
 <meta property="og:image" content="https://xoservices.eu/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="XO-SERVICES – electrical and assembly crews for industry">
+<meta property="og:image:alt" content="{{title}}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="logo.png">
-<link rel="preload" href="fonts/inter-900.woff" as="font" type="font/woff" crossorigin>
+<link rel="icon" href="/logo.png">
+<link rel="preload" href="/fonts/inter-900.woff" as="font" type="font/woff" crossorigin>
+<script type="application/ld+json">{{jsonld}}</script>
 <style>
-@font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url(fonts/inter-400.woff) format("woff")}
-@font-face{font-family:"Inter";font-weight:700;font-style:normal;font-display:swap;src:url(fonts/inter-700.woff) format("woff")}
-@font-face{font-family:"Inter";font-weight:900;font-style:normal;font-display:swap;src:url(fonts/inter-900.woff) format("woff")}
+@font-face{font-family:"Inter";font-weight:400;font-style:normal;font-display:swap;src:url(/fonts/inter-400.woff) format("woff")}
+@font-face{font-family:"Inter";font-weight:700;font-style:normal;font-display:swap;src:url(/fonts/inter-700.woff) format("woff")}
+@font-face{font-family:"Inter";font-weight:900;font-style:normal;font-display:swap;src:url(/fonts/inter-900.woff) format("woff")}
 /* Layout: a recruitment poster that keeps going — huge black caps on white paper, XO watermark bleeding off the right edge,
    thin rules between sections, and the black contact band fixed to the bottom of every screen. Single light world by choice. */
 :root{
@@ -266,7 +269,7 @@ address{font-style:normal}
 <a class="skip" href="#main" data-t="skip">Skip to content</a>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#main" aria-label="XO-SERVICES"><img src="logo-sm.png" alt="XO-SERVICES" width="180" height="113"></a>
+    <a class="brand" href="#main" aria-label="XO-SERVICES"><img src="/logo-sm.png" alt="XO-SERVICES" width="180" height="113"></a>
     <nav class="nav" id="nav" aria-label="Main">
       <a href="#services" data-t="servicesTitle">Our services</a>
       <a href="#projects" data-t="projects">Projects</a>
@@ -283,7 +286,7 @@ address{font-style:normal}
 
 <main id="main" tabindex="-1">
   <section class="hero" aria-labelledby="h-hero">
-    <img class="wm" src="logo.png" alt="" aria-hidden="true">
+    <img class="wm" src="/logo.png" alt="" aria-hidden="true">
     <div class="wrap">
       <div class="hero-grid">
         <div class="hero-head">
@@ -298,7 +301,7 @@ address{font-style:normal}
             <a class="btn btn-line" href="#apply"><span data-t="cvCta"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
           </div>
         </div>
-        <figure class="hero-photo"><img id="hero-img" src="img/crew.jpg" srcset="img/crew-480.jpg 480w, img/crew.jpg 840w" sizes="(min-width:900px) 62vw, 100vw" width="840" height="1396" alt="" fetchpriority="high"></figure>
+        <figure class="hero-photo"><img id="hero-img" src="/img/crew.jpg" srcset="/img/crew-480.jpg 480w, /img/crew.jpg 840w" sizes="(min-width:900px) 62vw, 100vw" width="840" height="1396" alt="" fetchpriority="high"></figure>
         <ul class="facts" style="list-style:none;margin:0">
           <li data-t="crew"></li>
           <li data-t="langsOnSite"></li>
@@ -403,7 +406,7 @@ address{font-style:normal}
           <div class="field"><label for="f-msg" data-t="message"></label><textarea id="f-msg" name="message"></textarea></div>
           <p id="form-status" role="status" aria-live="polite"></p>
           <div class="ctas" style="align-items:center"><button class="btn btn-solid" type="submit"><span data-t="send"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13 13 3M6 3h7v7" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
-          <p class="note"><span data-t="formPrivacy"></span> <a href="privacy.html" data-t="privacy"></a></p>
+          <p class="note"><span data-t="formPrivacy"></span> <a href="{{privacyUrl}}" data-t="privacy"></a></p>
         </form>
       </div>
     </div>
@@ -414,7 +417,7 @@ address{font-style:normal}
 <footer class="foot">
   <div class="wrap">
     <span>© <span id="year">2026</span> XO-SERVICES s. r. o. · <span data-t="ico"></span> 57 302 880</span>
-    <a href="privacy.html" data-t="privacy">Privacy notice</a>
+    <a href="{{privacyUrl}}" data-t="privacy">Privacy notice</a>
     <a href="#main" data-t="backTop">Back to top</a>
   </div>
 </footer>
@@ -436,10 +439,17 @@ const $ = (s, r = document) => r.querySelector(s);
 const sel = $("#lang");
 ORDER.forEach(c => sel.add(new Option(NAMES[c], c)));
 
+// Every language has its own address (/, /sk/, /de/ …) so search engines can index each one.
+const PAGE_LANG = "{{lang}}";
+const URLS = Object.fromEntries(ORDER.map(c => [c, c === "en" ? "/" : "/" + c + "/"]));
 function pickLang() {
-  try { const s = localStorage.getItem("xo-lang"); if (s && I18N[s]) return s; } catch (e) {}
-  const nav = (navigator.languages || [navigator.language || "en"]).map(l => l.slice(0, 2).toLowerCase());
-  return nav.find(l => I18N[l]) || "en";
+  if (PAGE_LANG === "en" && location.pathname === "/") {
+    let want = null;
+    try { want = localStorage.getItem("xo-lang"); } catch (e) {}
+    if (!want) want = (navigator.languages || [navigator.language || "en"]).map(l => l.slice(0, 2).toLowerCase()).find(l => URLS[l]);
+    if (want && want !== "en" && URLS[want]) location.replace(URLS[want] + location.hash);
+  }
+  return PAGE_LANG;
 }
 
 function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -472,7 +482,7 @@ function apply(code) {
   t.roles.forEach(r => prof.add(new Option(r, r)));
   prof.selectedIndex = keep > 0 ? keep : 0;
   $("#menu-btn").setAttribute("aria-label", t.menuLabel);
-  document.title = "XO-SERVICES | " + t.heroHead.replace(/-\n/g, "-").replace(/\n/g, " ").replace(/^./, c => c.toUpperCase());
+  document.title = "XO-SERVICES | " + t.pageTitle;
   $("#wa").href = "https://wa.me/421908975983?text=" + encodeURIComponent(t.waText);
   document.querySelectorAll('#cv-form [aria-invalid="true"]').forEach(x => checkField(x, t));
   if ($("#form-status").textContent) $("#form-status").textContent = t.fixField;
@@ -513,7 +523,7 @@ apply(current);
   addEventListener("scroll", () => { if (!ticking && scrollY < hero.offsetHeight * 1.2) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
   upd();
 })();
-sel.addEventListener("change", () => { current = sel.value; apply(current); try { localStorage.setItem("xo-lang", current); } catch (e) {} });
+sel.addEventListener("change", () => { const c = sel.value; try { localStorage.setItem("xo-lang", c); } catch (e) {} if (c !== PAGE_LANG) location.href = URLS[c] + location.hash; });
 
 const menuBtn = $("#menu-btn"), nav = $("#nav");
 menuBtn.addEventListener("click", () => { const open = nav.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", open); });

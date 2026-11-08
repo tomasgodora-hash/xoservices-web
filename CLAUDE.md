@@ -1,7 +1,7 @@
 # xoservices-web – pravidlá pre Claude
 
 - Majiteľ: Tomáš Godora, konateľ XO-SERVICES s. r. o. Komunikácia po slovensky.
-- Úpravy robiť v `src/` a potom `python3 build.py`. `index.html` je generovaný.
+- Úpravy robiť v `src/` (šablóna, `i18n/`, `privacy/`) a potom `python3 build.py`. Generované sú `index.html`, `<jazyk>/index.html`, `privacy.html`, `<jazyk>/privacy.html` a `sitemap.xml`; ručne ich neupravovať.
 - Pred nasadením zmeny dizajnu najprv ukázať náhľad (artefakt) a počkať na súhlas.
 - Repozitár je verejný a GitHub Pages zverejní každý súbor v koreni. Interné dokumenty (audity, poznámky, zoznamy ľudí) sem nepatria.
 

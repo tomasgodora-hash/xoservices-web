@@ -1,4 +1,179 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://xoservices.eu/</loc><lastmod>2026-11-07</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://xoservices.eu/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
+  <url>
+    <loc>https://xoservices.eu/sk/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
+  <url>
+    <loc>https://xoservices.eu/cs/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
+  <url>
+    <loc>https://xoservices.eu/pl/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
+  <url>
+    <loc>https://xoservices.eu/de/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
+  <url>
+    <loc>https://xoservices.eu/fr/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
+  <url>
+    <loc>https://xoservices.eu/nl/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
+  <url>
+    <loc>https://xoservices.eu/es/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
+  <url>
+    <loc>https://xoservices.eu/it/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
+  <url>
+    <loc>https://xoservices.eu/pt/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
+  <url>
+    <loc>https://xoservices.eu/ro/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://xoservices.eu/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://xoservices.eu/sk/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://xoservices.eu/cs/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://xoservices.eu/pl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://xoservices.eu/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://xoservices.eu/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://xoservices.eu/nl/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://xoservices.eu/es/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://xoservices.eu/it/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://xoservices.eu/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://xoservices.eu/ro/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://xoservices.eu/"/>
+  </url>
 </urlset>

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Zostaví index.html zo src/template.html a src/i18n/*.json.
+"""Zostaví web zo src/template.html, src/i18n/*.json a src/privacy/*.html:
+index.html (angličtina), <jazyk>/index.html, privacy.html, <jazyk>/privacy.html a sitemap.xml.
 
 Použitie:  python3 build.py
 Text zmeníš v src/i18n/<jazyk>.json (rovnaký kľúč vo všetkých 11 jazykoch),
-vzhľad a štruktúru v src/template.html. index.html nikdy neupravuj ručne.
+vzhľad a štruktúru v src/template.html. Vygenerované HTML súbory nikdy neupravuj ručne.
 """
 import hashlib, html, json, re, sys
 from pathlib import Path
@@ -70,25 +71,119 @@ def prerender(s, t):
     s = s.replace('<ul class="roles" id="roles"></ul>', '<ul class="roles" id="roles">' + "".join(f"<li>{esc(r)}</li>" for r in t["roles"]) + "</ul>")
     return s.replace("{{metaDesc}}", html.escape(t["metaDesc"]))
 
+SITE = "https://xoservices.eu"
+OG_LOCALE = {"en": "en_GB", "sk": "sk_SK", "cs": "cs_CZ", "pl": "pl_PL", "de": "de_DE", "fr": "fr_FR",
+             "nl": "nl_NL", "es": "es_ES", "it": "it_IT", "pt": "pt_PT", "ro": "ro_RO"}
+
+def url(code): return SITE + ("/" if code == DEFAULT else f"/{code}/")
+def path(code): return "index.html" if code == DEFAULT else f"{code}/index.html"
+def privacy_path(code): return "privacy.html" if code == DEFAULT else f"{code}/privacy.html"
+
+def title(t): return "XO-SERVICES | " + t["pageTitle"]
+
+def jsonld(t):
+    org = {
+        "@context": "https://schema.org", "@type": "Organization",
+        "name": "XO-SERVICES s. r. o.", "alternateName": "XO-SERVICES", "url": SITE + "/",
+        "logo": SITE + "/logo.png", "image": SITE + "/og.png", "description": t["metaDesc"],
+        "email": "info@xoservices.eu", "telephone": "+421908975983",
+        "vatID": "SK2122656217", "taxID": "2122656217",
+        "identifier": {"@type": "PropertyValue", "propertyID": "IČO", "value": "57302880"},
+        "address": {"@type": "PostalAddress", "streetAddress": "Jenisejská 45A", "postalCode": "040 12",
+                    "addressLocality": "Košice", "addressCountry": "SK"},
+        "areaServed": "Europe", "knowsLanguage": ["en", "sk", "pl"],
+        "sameAs": ["https://www.instagram.com/xoservices_/"],
+    }
+    return json.dumps(org, ensure_ascii=False).replace("</", "<\\/")
+
+def wrap(code, out):
+    page = (f'<!doctype html>\n<html lang="{code}">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n')
+    i = out.index("</style>") + len("</style>")
+    return page + out[:i] + "\n</head>\n<body>\n" + out[i:] + "\n</body>\n</html>\n"
+
 def main():
-    import argparse
+    import argparse, datetime
     ap = argparse.ArgumentParser(description="Zostaví web zo šablóny a prekladov.")
     ap.add_argument("--template", default="src/template.html", help="šablóna (predvolene src/template.html)")
-    ap.add_argument("--out", default="index.html", help="výstupný súbor (predvolene index.html)")
     args = ap.parse_args()
     tr = load()
     tpl = (ROOT / args.template).read_text("utf-8")
     for code, d in tr.items(): check_banned(json.dumps(d, ensure_ascii=False), f"{code}.json")
     check_banned(tpl, "template.html")
-    out = prerender(tpl, tr[DEFAULT])
-    out = out.replace("/*__I18N__*/null", json.dumps(tr, ensure_ascii=False, separators=(",", ":")))
-    if "{{" in out or "__I18N__" in out: fail("v šablóne ostal nevyplnený zástupný text")
-    page = ('<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n'
-            '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n')
-    i = out.index("</style>") + len("</style>")
-    page += out[:i] + "\n</head>\n<body>\n" + out[i:] + "\n</body>\n</html>\n"
-    (ROOT / args.out).write_text(page, "utf-8")
-    print(f"build: {args.out} hotový ({len(page)//1024} kB, {len(tr)} jazykov, {len(tr[DEFAULT])} kľúčov)")
+    alts = "\n".join(f'<link rel="alternate" hreflang="{c}" href="{url(c)}">' for c in ORDER) + \
+           f'\n<link rel="alternate" hreflang="x-default" href="{url(DEFAULT)}">'
+    for code in ORDER:
+        t = tr[code]
+        out = prerender(tpl, t)
+        out = out.replace("/*__I18N__*/null", json.dumps({code: t}, ensure_ascii=False, separators=(",", ":")))
+        out = (out.replace("{{title}}", html.escape(title(t))).replace("{{url}}", url(code))
+                  .replace("{{hreflang}}", alts).replace("{{ogLocale}}", OG_LOCALE[code])
+                  .replace("{{jsonld}}", jsonld(t)).replace("{{lang}}", code)
+                  .replace("{{privacyUrl}}", "/" + privacy_path(code)))
+        if "{{" in out or "__I18N__" in out: fail(f"{code}: v šablóne ostal nevyplnený zástupný text")
+        page = wrap(code, out)
+        f = ROOT / path(code); f.parent.mkdir(exist_ok=True); f.write_text(page, "utf-8")
+    build_privacy(tr)
+    today = datetime.date.today().isoformat()
+    links = "".join(f'\n    <xhtml:link rel="alternate" hreflang="{c}" href="{url(c)}"/>' for c in ORDER) + \
+            f'\n    <xhtml:link rel="alternate" hreflang="x-default" href="{url(DEFAULT)}"/>'
+    sm = ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+          'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
+          "".join(f"  <url>\n    <loc>{url(c)}</loc>\n    <lastmod>{today}</lastmod>{links}\n  </url>\n" for c in ORDER) +
+          "</urlset>\n")
+    (ROOT / "sitemap.xml").write_text(sm, "utf-8")
+    print(f"build: {len(ORDER)} jazykových stránok + ochrana údajov + sitemap.xml hotové ({len(tr[DEFAULT])} kľúčov)")
+
+PRIV_SHELL = """<!doctype html>
+<html lang="{code}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title} | XO-SERVICES</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/logo.png">
+<style>
+@font-face{{font-family:"Inter";font-weight:400;font-display:swap;src:url(/fonts/inter-400.woff) format("woff")}}
+@font-face{{font-family:"Inter";font-weight:700;font-display:swap;src:url(/fonts/inter-700.woff) format("woff")}}
+@font-face{{font-family:"Inter";font-weight:900;font-display:swap;src:url(/fonts/inter-900.woff) format("woff")}}
+:root{{--paper:#fff;--ink:#111;--grey:#666;--line:#dedede;color-scheme:light}}
+*{{box-sizing:border-box}}
+body{{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.65 "Inter","Helvetica Neue",Arial,sans-serif}}
+::selection{{background:var(--ink);color:var(--paper)}}
+a{{color:inherit;text-underline-offset:.2em}}
+:focus-visible{{outline:2px solid var(--ink);outline-offset:3px}}
+.wrap{{max-width:46rem;margin:0 auto;padding:2.5rem max(16px,env(safe-area-inset-left,0px)) 4rem}}
+header{{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-bottom:1px solid var(--line);padding-bottom:1.25rem;margin-bottom:2.5rem}}
+header img{{height:2.6rem;width:auto}}
+header a{{font-weight:700;display:inline-flex;align-items:center;min-height:44px}}
+h1{{font-weight:900;text-transform:uppercase;letter-spacing:-.03em;line-height:1;font-size:clamp(1.75rem,6vw,3.2rem);margin:0 0 1.5rem;text-wrap:balance;hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word}}
+h2{{font-size:1.25rem;font-weight:700;margin:2.2rem 0 .5rem}}
+p,ul{{margin:.5rem 0}}
+li{{margin:.35rem 0}}
+.muted{{color:var(--grey);font-size:.9375rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a href="{home}"><img src="/logo-sm.png" alt="XO-SERVICES" width="180" height="113"></a><a href="{home}">← xoservices.eu</a></header>
+<main>
+{body}
+</main>
+</div>
+</body>
+</html>
+"""
+
+def build_privacy(tr):
+    for code in ORDER:
+        src = ROOT / "src" / "privacy" / f"{code}.html"
+        if not src.exists(): fail(f"chýba {src.relative_to(ROOT)}")
+        body = src.read_text("utf-8")
+        check_banned(body, src.name)
+        m = re.search(r"<h1>(.*?)</h1>", body)
+        f = ROOT / privacy_path(code); f.parent.mkdir(exist_ok=True)
+        f.write_text(PRIV_SHELL.format(code=code, title=m.group(1) if m else "Privacy", home=url(code).replace(SITE, ""), body=body), "utf-8")
 
 if __name__ == "__main__":
     main()
