@@ -109,7 +109,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* hero photo: softened tone, bleeds to the right edge; text sits on a white panel that overlaps it */
 .subline{display:none}
 .hero-photo{margin:0;position:relative;overflow:hidden;background:var(--paper);width:100vw;margin-left:calc(50% - 50vw);aspect-ratio:4/5}
-.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 8%;filter:grayscale(1) contrast(.72) brightness(1.2)}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 8%;filter:grayscale(1) contrast(.86) brightness(1.1)}
 @media(max-width:699px){.hero .wrap{padding-block:var(--s4) var(--s4)}.hero-grid{gap:var(--s3)}}
 @media(max-width:420px){
   .hero h1{font-size:clamp(2.35rem,10.4vw,2.75rem)}
@@ -127,7 +127,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .hero-grid>*:not(.hero-photo){position:relative;z-index:1}
   .hero h1{font-size:clamp(2.75rem,4.8vw,4.25rem)}
   .hero-photo{position:absolute;z-index:-1;top:0;right:0;width:60vw;height:calc(100svh - 7.75rem);margin:0;aspect-ratio:auto}
-  .hero-photo img{object-position:50% 24%}
+  .hero-photo img{object-position:50% 6%}
   /* XO watermark stays on the white panel, behind the headline, never over the photo */
   .wm{right:auto;left:max(-4rem,calc(50vw - 43rem));top:5rem;width:min(46rem,48vw)}
 }
@@ -137,6 +137,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .hero h1 span:nth-child(3){animation-delay:.16s}
   .hero h1 span:nth-child(4){animation-delay:.24s}
   @keyframes rise{from{transform:translateY(.35em);clip-path:inset(0 0 100% 0)}to{transform:none;clip-path:inset(-40% -10% -40% -10%)}}
+  /* hero photo: a curtain opens from the right edge, the frame settles; on scroll it drifts slower than the page and fades a little */
+  .hero-photo{animation:curtain 1.25s var(--ease-out) .3s both}
+  .hero-photo img{height:calc(100% + 90px);animation:settle 1.9s var(--ease-out) .3s both;will-change:translate}
+  @keyframes curtain{from{clip-path:inset(0 0 0 100%)}to{clip-path:inset(0 0 0 0)}}
+  @keyframes settle{from{scale:1.12}to{scale:1}}
 }
 
 /* sections */
@@ -503,6 +508,19 @@ apply(current);
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { release(e.target); io.unobserve(e.target); } }),
     { rootMargin: "0px 0px -18% 0px", threshold: 0.05 });
   map.forEach((_, el) => io.observe(el));
+})();
+(() => {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const hero = $(".hero"), fig = $(".hero-photo"), img = $("#hero-img");
+  let ticking = false;
+  const upd = () => {
+    ticking = false;
+    const p = Math.min(Math.max(scrollY / hero.offsetHeight, 0), 1);
+    img.style.translate = "0 " + (-90 * p).toFixed(1) + "px";
+    fig.style.opacity = (1 - 0.35 * p).toFixed(3);
+  };
+  addEventListener("scroll", () => { if (!ticking && scrollY < hero.offsetHeight * 1.2) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+  upd();
 })();
 sel.addEventListener("change", () => { current = sel.value; apply(current); try { localStorage.setItem("xo-lang", current); } catch (e) {} });
 
