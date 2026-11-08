@@ -81,10 +81,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero-grid{position:relative;z-index:1;display:grid;gap:var(--s4)}
 .hero h1{font-weight:900;text-transform:uppercase;font-size:clamp(2.75rem,7.6vw,5.5rem);line-height:.98;letter-spacing:-.04em;max-width:14ch;white-space:pre-line}
 .hero h1 span{display:block}
-.subline,.values{display:flex;flex-wrap:wrap;row-gap:.55rem;column-gap:0;padding:0;margin-left:-1.75rem;clip-path:inset(-1em -1em -1em 1.75rem)}
+.subline{display:flex;flex-wrap:wrap;row-gap:.55rem;column-gap:0;padding:0;margin-left:-1.75rem;clip-path:inset(-1em -1em -1em 1.75rem)}
 .subline{margin-top:var(--s3);margin-bottom:0}
 .subline li,.values li{list-style:none}
-.subline li::before,.values li::before{content:"•";display:inline-block;width:1.75rem;text-align:center}
+.subline li::before{content:"•";display:inline-block;width:1.75rem;text-align:center}
 .label{display:inline-block;background:var(--ink);color:var(--paper);font-weight:900;letter-spacing:.12em;text-transform:uppercase;font-size:.9375rem;padding:.55rem .9rem}
 .hero-intro{max-width:36rem;font-size:1.1875rem;line-height:1.55}
 .ctas{display:flex;flex-wrap:wrap;gap:.75rem}
@@ -136,7 +136,10 @@ section{scroll-margin-top:5rem}
 /* about */
 .about .wrap{display:grid;gap:var(--s3)}
 @media(min-width:900px){.about .wrap{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:end;column-gap:var(--s5)}}
-.values{margin-top:0;margin-bottom:0}
+/* proof and conditions: short facts, each on its own rule */
+.values{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:var(--s2) var(--s3);margin:var(--s3) 0 0;padding:0;text-transform:none;letter-spacing:0}
+.values li{border-top:2px solid var(--ink);padding-top:.7rem;font-weight:700;font-size:1.0625rem;line-height:1.35}
+.perks{margin:0 0 var(--s4)}
 
 /* projects */
 .proj .meta{display:grid;gap:.6rem;align-content:start}
@@ -295,7 +298,7 @@ address{font-style:normal}
       <h2 id="h-about" data-t="aboutTitle"></h2>
       <div style="display:grid;gap:var(--s2)">
         <p class="lead" data-t="aboutText"></p>
-        <ul class="values caps" id="values"></ul>
+        <ul class="values" id="values"></ul>
       </div>
     </div>
   </section>
@@ -348,6 +351,8 @@ address{font-style:normal}
         <h2 id="h-careers" data-t="careerTitle"></h2>
         <p class="lead" data-t="careerText"></p>
       </div>
+      <h3 class="caps" style="margin-bottom:var(--s2)" data-t="perksTitle"></h3>
+      <ul class="values perks" id="perks"></ul>
       <h3 class="caps" style="margin-bottom:var(--s2)" data-t="rolesTitle"></h3>
       <ul class="roles" id="roles"></ul>
       <div class="other">
@@ -429,9 +434,10 @@ function apply(code) {
   [1, 2, 3].forEach(i => {
     const row = el("article", "row");
     const left = el("div"); left.append(el("h3", null, t["offering" + i + "Title"]), el("p", "txt", t["offering" + i + "Text"]));
-    const ul = el("ul", "items"); [1, 2, 3].forEach(j => ul.appendChild(el("li", null, t["offering" + i + "Item" + j])));
+    const ul = el("ul", "items"); [1, 2, 3, 4].forEach(j => { if (t["offering" + i + "Item" + j]) ul.appendChild(el("li", null, t["offering" + i + "Item" + j])); });
     row.append(left, ul); off.appendChild(row);
   });
+  const perks = $("#perks"); perks.textContent = ""; [1, 2, 3].forEach(i => perks.appendChild(el("li", null, t["perk" + i])));
   const vals = $("#values"); vals.textContent = "";
   [t.value1, t.value2, t.value3, t.value4].forEach(v => vals.appendChild(el("li", null, v)));
   const roles = $("#roles"); roles.textContent = "";
@@ -457,7 +463,7 @@ let current = pickLang();
 apply(current);
 (() => {
   document.querySelectorAll(".sec h2").forEach(h => h.classList.add("rv"));
-  document.querySelectorAll(".sec .lead, .about .values, .other, .apply").forEach(e => e.classList.add("rv-fade"));
+  document.querySelectorAll(".sec .lead, .about .values, .perks, .other, .apply").forEach(e => e.classList.add("rv-fade"));
   // A clipped heading has no visible area, so each heading is watched through its parent.
   const map = new Map();
   document.querySelectorAll(".rv").forEach(h => map.set(h.parentElement, [...(map.get(h.parentElement) || []), h]));

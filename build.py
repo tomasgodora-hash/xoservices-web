@@ -54,17 +54,18 @@ def prerender(s, t):
     s = s.replace('<ul class="subline caps" id="subline"></ul>', '<ul class="subline caps" id="subline">' + "".join(f"<li>{esc(t[k])}</li>" for k in ("service2", "service4", "service5", "service1")) + "</ul>")
     rows = "".join(
         f'<article class="row"><div><h3>{esc(t[f"offering{i}Title"])}</h3><p class="txt">{esc(t[f"offering{i}Text"])}</p></div>'
-        f'<ul class="items">' + "".join(f"<li>{esc(t[f'offering{i}Item{j}'])}</li>" for j in (1, 2, 3)) + "</ul></article>"
+        f'<ul class="items">' + "".join(f"<li>{esc(t[f'offering{i}Item{j}'])}</li>" for j in (1, 2, 3, 4) if f'offering{i}Item{j}' in t) + "</ul></article>"
         for i in (1, 2, 3))
     s = s.replace('<div class="rows" id="offerings"></div>', f'<div class="rows" id="offerings">{rows}</div>')
     pics = [("img/cables.jpg", "35% 40%"), ("img/frames.jpg", "50% 60%"), ("img/crane.jpg", "50% 88%")]
     tiles = "".join(
         f'<article class="tile"><figure><img src="{pics[i-1][0]}" alt="" loading="lazy" style="object-position:{pics[i-1][1]}"></figure>'
         f'<h3>{esc(t[f"offering{i}Title"])}</h3><p>{esc(t[f"offering{i}Text"])}</p>'
-        f'<ul class="items">' + "".join(f"<li>{esc(t[f'offering{i}Item{j}'])}</li>" for j in (1, 2, 3)) + "</ul></article>"
+        f'<ul class="items">' + "".join(f"<li>{esc(t[f'offering{i}Item{j}'])}</li>" for j in (1, 2, 3, 4) if f'offering{i}Item{j}' in t) + "</ul></article>"
         for i in (1, 2, 3))
     s = s.replace('<div class="tiles" id="offerings"></div>', f'<div class="tiles" id="offerings">{tiles}</div>')
-    s = s.replace('<ul class="values caps" id="values"></ul>', '<ul class="values caps" id="values">' + "".join(f"<li>{esc(t[f'value{i}'])}</li>" for i in (1, 2, 3, 4)) + "</ul>")
+    s = s.replace('<ul class="values perks" id="perks"></ul>', '<ul class="values perks" id="perks">' + "".join(f"<li>{esc(t[f'perk{i}'])}</li>" for i in (1, 2, 3)) + "</ul>")
+    s = s.replace('<ul class="values" id="values"></ul>', '<ul class="values" id="values">' + "".join(f"<li>{esc(t[f'value{i}'])}</li>" for i in (1, 2, 3, 4)) + "</ul>")
     s = s.replace('<ul class="roles" id="roles"></ul>', '<ul class="roles" id="roles">' + "".join(f"<li>{esc(r)}</li>" for r in t["roles"]) + "</ul>")
     return s.replace("{{metaDesc}}", html.escape(t["metaDesc"]))
 
