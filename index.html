@@ -82,7 +82,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* hero poster */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
 .hero .wrap{position:relative;padding-block:var(--s5) var(--s5)}
-.wm{position:absolute;pointer-events:none;user-select:none;opacity:.055;width:min(62rem,120vw);right:-14vw;top:-2rem;z-index:0}
+.wm{position:absolute;pointer-events:none;user-select:none;opacity:.055;width:min(40rem,110vw);right:-22vw;top:-1rem;z-index:0;clip-path:inset(0 0 20% 0)}
 .hero-grid{position:relative;z-index:1;display:grid;gap:var(--s4)}
 .hero h1{font-weight:900;text-transform:uppercase;font-size:clamp(2.75rem,7.6vw,5.5rem);line-height:.98;letter-spacing:-.04em;max-width:14ch;white-space:pre-line}
 .hero h1 span{display:block}
@@ -106,9 +106,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn svg{width:1.05rem;height:1.05rem;flex:none}
 .facts{display:grid;gap:.4rem;line-height:1.45;padding-left:1.1rem;position:relative;font-weight:400}
 .facts::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:5px;background:var(--ink)}
-/* hero photo: softened tone, bleeds to the right edge; text sits on a white panel that overlaps it */
+/* hero photo: softened tone, bleeds to the right edge and dissolves into the white page toward the text */
 .subline{display:none}
-.hero-photo{margin:0;position:relative;overflow:hidden;background:var(--paper);width:100vw;margin-left:calc(50% - 50vw);aspect-ratio:4/5}
+.hero-photo{margin:0;position:relative;overflow:hidden;background:var(--paper);width:100vw;margin-left:calc(50% - 50vw);margin-top:-2.5rem;aspect-ratio:4/5;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 28%);mask-image:linear-gradient(to bottom,transparent 0,#000 28%)}
 .hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 8%;filter:grayscale(1) contrast(.86) brightness(1.1)}
 @media(max-width:699px){.hero .wrap{padding-block:var(--s4) var(--s4)}.hero-grid{gap:var(--s3)}}
 @media(max-width:420px){
@@ -123,13 +123,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media(min-width:900px){
   .hero{isolation:isolate;min-height:calc(100svh - 7.75rem)}
   .hero .wrap{position:static;padding-block:var(--s5) var(--s5)}
-  .hero-grid{position:static;grid-template-columns:minmax(0,1fr);max-width:44rem;background:var(--paper);padding:var(--s4) var(--s4) var(--s4) 0;margin-top:var(--s2);row-gap:var(--s3)}
+  .hero-grid{position:static;grid-template-columns:minmax(0,1fr);max-width:44rem;padding:var(--s4) 0;margin-top:var(--s2);row-gap:var(--s3)}
   .hero-grid>*:not(.hero-photo){position:relative;z-index:1}
   .hero h1{font-size:clamp(2.75rem,4.8vw,4.25rem)}
-  .hero-photo{position:absolute;z-index:-1;top:0;right:0;width:60vw;height:calc(100svh - 7.75rem);margin:0;aspect-ratio:auto}
+  .hero-photo{position:absolute;z-index:-1;top:0;right:0;width:62vw;height:calc(100svh - 7.75rem);margin:0;aspect-ratio:auto;-webkit-mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.35) 22%,#000 52%);mask-image:linear-gradient(to right,transparent 0,rgba(0,0,0,.35) 22%,#000 52%)}
   .hero-photo img{object-position:50% 6%}
-  /* XO watermark stays on the white panel, behind the headline, never over the photo */
-  .wm{right:auto;left:max(-4rem,calc(50vw - 43rem));top:5rem;width:min(46rem,48vw)}
+  /* XO mark (without the SERVICES line) behind the headline, bleeding off the left edge */
+  .wm{right:auto;left:-7rem;top:3.5rem;width:min(40rem,44vw)}
 }
 @media(prefers-reduced-motion:no-preference){
   .hero h1 span{animation:rise .7s cubic-bezier(.16,1,.3,1) both}
@@ -306,7 +306,7 @@ address{font-style:normal}
             <a class="btn btn-line" href="#apply"><span data-t="cvCta">Send your CV</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
           </div>
         </div>
-        <figure class="hero-photo"><img id="hero-img" src="img/crew.jpg" srcset="img/crew-480.jpg 480w, img/crew.jpg 840w" sizes="(min-width:900px) 60vw, 100vw" width="840" height="1396" alt="XO-SERVICES installer beneath cable ladders in an industrial hall" fetchpriority="high"></figure>
+        <figure class="hero-photo"><img id="hero-img" src="img/crew.jpg" srcset="img/crew-480.jpg 480w, img/crew.jpg 840w" sizes="(min-width:900px) 62vw, 100vw" width="840" height="1396" alt="XO-SERVICES installer beneath cable ladders in an industrial hall" fetchpriority="high"></figure>
         <ul class="facts" style="list-style:none;margin:0">
           <li data-t="crew">Crew of 10–15 people, scalable</li>
           <li data-t="langsOnSite">On site in English, Slovak and Polish</li>
