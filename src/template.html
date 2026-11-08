@@ -101,11 +101,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn svg{width:1.05rem;height:1.05rem;flex:none}
 .facts{display:grid;gap:.4rem;line-height:1.45;padding-left:1.1rem;position:relative;font-weight:400}
 .facts::before{content:"";position:absolute;left:0;top:.2rem;bottom:.2rem;width:5px;background:var(--ink)}
+.hero-photo{margin:0;position:relative;z-index:1;overflow:hidden;background:var(--ink);aspect-ratio:3/4}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;filter:grayscale(1)}
 @media(max-width:699px){.subline{display:none}.hero .wrap{padding-block:var(--s4) var(--s4)}.hero-grid{gap:var(--s3)}}
 @media(min-width:900px){
   .hero .wrap{padding-block:var(--s5) var(--s5)}
-  .hero-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);align-items:end;column-gap:var(--s5)}
-  .hero-head{grid-column:1/-1}
+  .hero-grid{grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);grid-template-rows:auto auto 1fr;align-items:start;column-gap:var(--s5)}
+  .hero-head{grid-column:1;grid-row:1}
+  .hero-grid>div:not(.hero-head){grid-column:1;grid-row:2}
+  .hero-grid>.facts{grid-column:1;grid-row:3;align-self:end}
+  .hero-photo{grid-column:2;grid-row:1/4;aspect-ratio:auto;height:100%;min-height:34rem}
+  .hero h1{font-size:clamp(2.75rem,6vw,5rem)}
 }
 @media(prefers-reduced-motion:no-preference){
   .hero h1 span{animation:rise .7s cubic-bezier(.16,1,.3,1) both}
@@ -274,6 +280,7 @@ address{font-style:normal}
             <a class="btn btn-line" href="#apply"><span data-t="cvCta"></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2v11M3 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
           </div>
         </div>
+        <figure class="hero-photo"><img id="hero-img" src="img/crew.jpg" srcset="img/crew-480.jpg 480w, img/crew.jpg 840w" sizes="(min-width:900px) 38vw, 100vw" width="840" height="1396" alt="" fetchpriority="high"></figure>
         <ul class="facts" style="list-style:none;margin:0">
           <li data-t="crew"></li>
           <li data-t="langsOnSite"></li>
@@ -451,6 +458,7 @@ function apply(code) {
   $("#wa").href = "https://wa.me/421908975983?text=" + encodeURIComponent(t.waText);
   document.querySelectorAll('#cv-form [aria-invalid="true"]').forEach(x => checkField(x, t));
   if ($("#form-status").textContent) $("#form-status").textContent = t.fixField;
+  $("#hero-img").alt = t.photoAlt;
   fitHeads();
 }
 function fitHeads() {
